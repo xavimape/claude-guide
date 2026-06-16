@@ -119,4 +119,4 @@ Sin frameworks, sin bundlers, sin dependencias npm. Funciona offline desde `file
 ## Licencia
 
 Contenido de uso personal y educativo.
-No afiliado con Anthropic. Claude® es marca registrada de Anthropic PBC.
+Copyright (c) 2026 Javier MapelliJavier Mapelli.
