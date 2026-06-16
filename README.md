@@ -51,39 +51,6 @@ claude-guide/
 
 ---
 
-## Deploy en GitHub Pages
-
-### Opción A — Desde la terminal (recomendado)
-
-```bash
-# Inicializar repo (si no existe)
-git init
-git add .
-git commit -m "feat: initial claude guide"
-
-# Crear repo en GitHub (necesitás gh CLI instalado)
-gh repo create claude-guide --public --push --source=.
-```
-
-Luego en GitHub → **Settings → Pages → Source**: `main` branch, carpeta `/` (root).
-
-La URL será: `https://xavimape.github.io/claude-guide/`
-
-### Opción B — Sin CLI
-
-1. Creá el repo en [github.com/new](https://github.com/new)
-2. Subí los archivos arrastrando desde la UI de GitHub (o via `git push`)
-3. Ir a **Settings → Pages → Source → Deploy from branch → main → / (root)**
-4. Esperar ~1 minuto y abrir la URL que aparece
-
-### Opción C — GitHub Desktop
-
-1. File → Add Local Repository → seleccioná la carpeta del proyecto
-2. Publish repository → Name: `claude-guide` → Public ✓ → Publish
-3. Activar GitHub Pages desde la web (paso 3 de Opción B)
-
----
-
 ## Desarrollo local
 
 No requiere servidor. Abrí directamente `index.html` en Chrome.
