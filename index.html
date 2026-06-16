@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domina Claude AI para Programación y Ciberseguridad — Guía Técnica 2026</title>
+
+<!-- SEO principal -->
+<meta name="description" content="Aprendé a usar Claude AI para programación, ciberseguridad, investigación técnica y automatización. Ejemplos reales, prompts avanzados y flujos profesionales con Claude Code, MCP Servers y VS Code.">
+<meta name="author" content="xavimape">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#08090D">
+<link rel="canonical" href="https://xavimape.github.io/claude-guide/">
+
+<!-- Open Graph (LinkedIn, WhatsApp, Slack, Discord) -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://xavimape.github.io/claude-guide/">
+<meta property="og:title"       content="Domina Claude AI para Programación y Ciberseguridad">
+<meta property="og:description" content="Prompts accionables, flujos reales y configuración avanzada para analistas de ciberseguridad y developers. +200 prompts documentados, 8 módulos especializados.">
+<meta property="og:image"       content="https://xavimape.github.io/claude-guide/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale"      content="es_AR">
+<meta property="og:site_name"   content="Claude AI Guide">
+
+<!-- Twitter / X Cards -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:url"         content="https://xavimape.github.io/claude-guide/">
+<meta name="twitter:title"       content="Domina Claude AI para Programación y Ciberseguridad">
+<meta name="twitter:description" content="Prompts accionables, flujos reales y configuración avanzada. +200 prompts documentados, 8 módulos especializados.">
+<meta name="twitter:image"       content="https://xavimape.github.io/claude-guide/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://xavimape.github.io/claude-guide/",
+      "headline": "Domina Claude AI para Programación y Ciberseguridad",
+      "description": "Guía técnica completa para usar Claude AI en programación, ciberseguridad, investigación técnica y automatización.",
+      "url": "https://xavimape.github.io/claude-guide/",
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-06-16",
+      "inLanguage": "es",
+      "author": { "@type": "Person", "@id": "https://github.com/xavimape" },
+      "about": ["Claude AI", "Ciberseguridad", "Programación", "MCP Servers", "Claude Code"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://github.com/xavimape",
+      "name": "xavimape",
+      "url": "https://github.com/xavimape",
+      "knowsAbout": ["Ciberseguridad", "Programación", "Claude AI", "DevOps"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio",         "item": "https://xavimape.github.io/claude-guide/" },
+        { "@type": "ListItem", "position": 2, "name": "Ciberseguridad", "item": "https://xavimape.github.io/claude-guide/#ciberseguridad" },
+        { "@type": "ListItem", "position": 3, "name": "Programación",   "item": "https://xavimape.github.io/claude-guide/#programacion" }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Fonts: variantes reducidas + display:swap para performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+<!-- ═══ NAV ═══ -->
+<div id="readProgress" class="read-progress" role="progressbar" aria-label="Progreso de lectura" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+<nav aria-label="Navegación principal">
+  <a href="#hero" class="nav-logo" aria-label="Claude AI Guide — Inicio">
+    <span class="nav-logo-dot" aria-hidden="true"></span>
+    Claude AI Guide
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="#web">Web</a></li>
+    <li><a href="#desktop">Desktop</a></li>
+    <li><a href="#vscode">VS Code</a></li>
+    <li><a href="#integraciones">MCP</a></li>
+    <li><a href="#ciberseguridad">Seguridad</a></li>
+    <li><a href="#programacion">Código</a></li>
+    <li><a href="#investigacion">Research</a></li>
+    <li><a href="#cheatsheet">Cheatsheet</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="https://github.com/xavimape/claude-guide" target="_blank" rel="noopener noreferrer" class="nav-github" aria-label="Ver repositorio en GitHub">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      GitHub
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mainSidebar" type="button">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+</nav>
+<div id="sidebarOverlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+<!-- ═══ SIDEBAR ═══ -->
+<nav id="mainSidebar" class="sidebar" aria-label="Secciones de la guía">
+  <a href="#hero" class="sidebar-link sidebar-home"><span class="icon">🏠</span> Inicio</a>
+  <div class="sidebar-section">Plataformas</div>
+  <a href="#web" class="sidebar-link"><span class="icon">🌐</span> Versión Web</a>
+  <div class="sidebar-group">
+    <a href="#desktop" class="sidebar-link"><span class="icon">🖥️</span> Desktop Windows<span class="sb-arrow">▸</span></a>
+    <div class="sidebar-subs">
+      <a href="#desktop-chat"   class="sidebar-sub">→ Chat</a>
+      <a href="#desktop-cowork" class="sidebar-sub">→ Cowork</a>
+      <a href="#desktop-code"   class="sidebar-sub">→ Code + CI/CD</a>
+    </div>
+  </div>
+  <div class="sidebar-group">
+    <a href="#vscode" class="sidebar-link"><span class="icon">⚡</span> VS Code Extension<span class="sb-arrow">▸</span></a>
+    <div class="sidebar-subs">
+      <a href="#vsc-model"   class="sidebar-sub">→ Modelos</a>
+      <a href="#vsc-slash"   class="sidebar-sub">→ Comandos /</a>
+      <a href="#vsc-at"      class="sidebar-sub">→ Referencias @</a>
+      <a href="#vsc-agentes" class="sidebar-sub">→ Agentes &amp; Hooks</a>
+    </div>
+  </div>
+  <div class="sidebar-section">Integraciones</div>
+  <a href="#integraciones" class="sidebar-link"><span class="icon">🔗</span> MCP Servers</a>
+  <div class="sidebar-group">
+    <a href="#ejemplos" class="sidebar-link"><span class="icon">🎯</span> Ejemplos Reales<span class="sb-arrow">▸</span></a>
+    <div class="sidebar-subs">
+      <a href="#ej1"  class="sidebar-sub">→ SaaS con Stripe</a>
+      <a href="#ej2"  class="sidebar-sub">→ CI/CD con GitHub</a>
+      <a href="#ej3"  class="sidebar-sub">→ RAG con DB</a>
+      <a href="#ej4"  class="sidebar-sub">→ Refactor masivo</a>
+      <a href="#ej5"  class="sidebar-sub">→ Agente de soporte</a>
+    </div>
+  </div>
+  <div class="sidebar-section">Especializado</div>
+  <div class="sidebar-group">
+    <a href="#ciberseguridad" class="sidebar-link"><span class="icon">🔐</span> Ciberseguridad<span class="sb-arrow">▸</span></a>
+    <div class="sidebar-subs">
+      <a href="#sec-code-review"  class="sidebar-sub">→ Code review seguro</a>
+      <a href="#sec-ctf"          class="sidebar-sub">→ CTF &amp; Exploits</a>
+      <a href="#sec-threatmodel"  class="sidebar-sub">→ Threat modeling</a>
+      <a href="#sec-tools"        class="sidebar-sub">→ Burp / Nmap / MSF</a>
+      <a href="#sec-osint"        class="sidebar-sub">→ OSINT &amp; Logs</a>
+    </div>
+  </div>
+  <div class="sidebar-group">
+    <a href="#programacion" class="sidebar-link"><span class="icon">💻</span> Programación Avanzada<span class="sb-arrow">▸</span></a>
+    <div class="sidebar-subs">
+      <a href="#prog-flujo"     class="sidebar-sub">→ Flujo completo</a>
+      <a href="#prog-claudemd"  class="sidebar-sub">→ Monorepos CLAUDE.md</a>
+      <a href="#prog-debug"     class="sidebar-sub">→ Debugging complejo</a>
+      <a href="#prog-review"    class="sidebar-sub">→ Code review OWASP</a>
+      <a href="#prog-cicd"      class="sidebar-sub">→ GitHub Actions</a>
+    </div>
+  </div>
+  <div class="sidebar-group">
+    <a href="#investigacion" class="sidebar-link"><span class="icon">🔬</span> Investigación<span class="sb-arrow">▸</span></a>
+    <div class="sidebar-subs">
+      <a href="#inv-papers"       class="sidebar-sub">→ Papers &amp; RFCs</a>
+      <a href="#inv-sintesis"     class="sidebar-sub">→ Síntesis de fuentes</a>
+      <a href="#inv-comparativas" class="sidebar-sub">→ Comparativas técnicas</a>
+    </div>
+  </div>
+  <div class="sidebar-group">
+    <a href="#escritura" class="sidebar-link"><span class="icon">📝</span> Escritura Técnica<span class="sb-arrow">▸</span></a>
+    <div class="sidebar-subs">
+      <a href="#esc-readme"    class="sidebar-sub">→ README profesionales</a>
+      <a href="#esc-api"       class="sidebar-sub">→ Docs API (OpenAPI)</a>
+      <a href="#esc-changelog" class="sidebar-sub">→ Changelogs &amp; Post-mortems</a>
+    </div>
+  </div>
+  <div class="sidebar-section">Referencia</div>
+  <a href="#cheatsheet" class="sidebar-link"><span class="icon">📋</span> Cheatsheet</a>
+</nav>
+
+<!-- ═══ MAIN ═══ -->
+<div class="page-wrapper">
+<main id="main-content" tabindex="-1">
+
+<!-- ════ HERO ════ -->
+<section class="hero" id="hero">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-content hero-layout">
+
+    <!-- Columna izquierda -->
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+        Guía técnica actualizada · 2026
+      </div>
+      <h1>Domina <span class="accent">Claude AI</span><br>para Programación<br class="hero-h1-br"> y <span class="accent-cyan">Ciberseguridad</span></h1>
+      <p class="hero-desc">Aprendé a usar Claude AI para programación, ciberseguridad, investigación técnica y automatización mediante ejemplos reales, prompts avanzados y flujos utilizados por profesionales.</p>
+
+      <!-- Meta: tiempo lectura + fecha -->
+      <div class="hero-meta">
+        <span class="hero-meta-item">📖 35 min de lectura</span>
+        <span class="hero-meta-sep">·</span>
+        <span class="hero-meta-item">⏱ Actualizado Junio 2026</span>
+        <span class="hero-meta-sep">·</span>
+        <span class="hero-meta-item">🌐 +200 prompts</span>
+      </div>
+
+      <!-- CTAs -->
+      <div class="hero-ctas">
+        <a href="#web" class="hero-cta hero-cta-primary">Leer la guía →</a>
+        <a href="https://github.com/xavimape/claude-guide" target="_blank" rel="noopener noreferrer" class="hero-cta hero-cta-secondary" aria-label="Ver repositorio en GitHub">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          ⭐ Ver en GitHub
+        </a>
+      </div>
+
+      <!-- Stats row -->
+      <div class="hero-stats" role="list" aria-label="Estadísticas de la guía">
+        <div class="hero-stat" role="listitem"><span class="hero-stat-n">8</span><span class="hero-stat-l">Módulos</span></div>
+        <div class="hero-stat-div" aria-hidden="true"></div>
+        <div class="hero-stat" role="listitem"><span class="hero-stat-n">+200</span><span class="hero-stat-l">Prompts</span></div>
+        <div class="hero-stat-div" aria-hidden="true"></div>
+        <div class="hero-stat" role="listitem"><span class="hero-stat-n">10+</span><span class="hero-stat-l">Casos reales</span></div>
+        <div class="hero-stat-div" aria-hidden="true"></div>
+        <div class="hero-stat" role="listitem"><span class="hero-stat-n">MCP</span><span class="hero-stat-l">Integrations</span></div>
+      </div>
+
+      <!-- Comenzar aquí -->
+      <div class="hero-starthere" aria-labelledby="starthere-label">
+        <p id="starthere-label" class="hero-nav-label">¿Qué tipo de usuario sos? →</p>
+        <div class="hero-roles" role="group" aria-label="Perfil de usuario">
+          <a href="#ciberseguridad" class="hero-role-btn">🛡️ Analista SOC</a>
+          <a href="#ciberseguridad" class="hero-role-btn">🔓 Pentester</a>
+          <a href="#programacion"   class="hero-role-btn">⚙️ Backend Dev</a>
+          <a href="#desktop"        class="hero-role-btn">🚀 DevOps</a>
+          <a href="#investigacion"  class="hero-role-btn">🔬 Investigador</a>
+          <a href="#escritura"      class="hero-role-btn">✍️ Tech Writer</a>
+        </div>
+      </div>
+
+      <!-- Navigation cards -->
+      <p class="hero-nav-label" aria-hidden="true">O elegí un módulo directamente →</p>
+      <div class="hero-nav-grid" role="list" aria-label="Módulos de la guía">
+        <a href="#web"           class="hero-nav-card" role="listitem"><span class="hnc-icon" aria-hidden="true">🌐</span><span class="hnc-title">Claude Web</span><span class="hnc-desc">Prompts &amp; Deep Research</span></a>
+        <a href="#desktop"       class="hero-nav-card" role="listitem"><span class="hnc-icon" aria-hidden="true">🖥️</span><span class="hnc-title">Desktop</span><span class="hnc-desc">Cowork · Code · CI/CD</span></a>
+        <a href="#vscode"        class="hero-nav-card" role="listitem"><span class="hnc-icon" aria-hidden="true">⚡</span><span class="hnc-title">VS Code</span><span class="hnc-desc">Extension · Agentes</span></a>
+        <a href="#integraciones" class="hero-nav-card" role="listitem"><span class="hnc-icon" aria-hidden="true">🔗</span><span class="hnc-title">MCPs</span><span class="hnc-desc">Shodan · VirusTotal</span></a>
+        <a href="#ciberseguridad" class="hero-nav-card hnc-red" role="listitem"><span class="hnc-icon" aria-hidden="true">🔐</span><span class="hnc-title">Seguridad</span><span class="hnc-desc">OWASP · STRIDE · OSINT</span></a>
+        <a href="#programacion"  class="hero-nav-card hnc-violet" role="listitem"><span class="hnc-icon" aria-hidden="true">💻</span><span class="hnc-title">Programación</span><span class="hnc-desc">Arq · Tests · CI/CD</span></a>
+        <a href="#investigacion" class="hero-nav-card hnc-green" role="listitem"><span class="hnc-icon" aria-hidden="true">🔬</span><span class="hnc-title">Investigación</span><span class="hnc-desc">Papers · RFCs · Síntesis</span></a>
+        <a href="#escritura"     class="hero-nav-card hnc-amber" role="listitem"><span class="hnc-icon" aria-hidden="true">✍️</span><span class="hnc-title">Escritura</span><span class="hnc-desc">README · API · Postmortem</span></a>
+      </div>
+    </div>
+
+    <!-- Columna derecha: terminal -->
+    <div class="hero-right">
+      <div class="hero-terminal">
+        <div class="terminal-bar">
+          <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
+          <span class="terminal-title">claude — terminal</span>
+        </div>
+        <div class="terminal-body">
+          <div><span class="t-prompt">$</span> <span class="t-cmd">claude "Revisá src/auth.ts con criterios OWASP Top 10"</span></div>
+          <div class="t-output">  ✦ Analizando contexto del proyecto...</div>
+          <div class="t-output">  ✦ Stack: Node.js + Express + TypeScript</div>
+          <div class="t-err">  ⚠ CWE-89 SQL Injection — línea 47 (sin sanitizar)</div>
+          <div class="t-err">  ⚠ CWE-798 Credencial hardcodeada — JWT_SECRET</div>
+          <div class="t-success">  ✓ Generando fixes con severidad CVSS v3...</div>
+          <div class="t-success">  ✓ Reporte exportado → security-report.md</div>
+          <br>
+          <div><span class="t-prompt">$</span> <span class="t-cmd">claude -p "Flujo completo: arq→código→tests→docs" @src/</span></div>
+          <div class="t-output">  ✦ Leyendo 42 archivos del proyecto...</div>
+          <div class="t-output">  ✦ Generando arquitectura de componentes...</div>
+          <div class="t-success">  ✓ Tests unitarios: 18 casos con edge cases</div>
+          <div class="t-success">  ✓ README.md y OpenAPI 3.0 generados</div>
+          <br>
+          <div><span class="t-prompt">$</span> <span class="t-cmd t-blink">_</span></div>
+        </div>
+      </div>
+      <!-- Quick cheatsheet card -->
+      <div class="hero-quick">
+        <div class="hero-quick-title">⚡ Comandos esenciales</div>
+        <div class="hero-quick-row"><code>claude</code><span>Modo interactivo REPL</span></div>
+        <div class="hero-quick-row"><code>claude -p "..."</code><span>Modo pipe / CI</span></div>
+        <div class="hero-quick-row"><code>/memory</code><span>Editar CLAUDE.md</span></div>
+        <div class="hero-quick-row"><code>@src/ @git</code><span>Referencias de contexto</span></div>
+        <div class="hero-quick-row"><code>--output-format json</code><span>Salida estructurada</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════ WEB ════ -->
+<section id="web">
+  <div class="section-label">Plataforma 01</div>
+  <h2 class="section-title">Claude en la Web</h2>
+  <p class="section-desc">Accedé a <strong>claude.ai</strong> desde cualquier navegador. Es el punto de entrada más completo para análisis de documentos, investigación con web search y flujos que no requieren acceso al código fuente local.</p>
+  <div class="cards-grid cols-3">
+    <div class="card"><div class="card-icon icon-violet">💬</div><h3>Proyectos y Contexto Persistente</h3><p>Organizá tu trabajo en Proyectos con instrucciones de sistema propias, archivos adjuntos y historial persistente entre sesiones. Ideal para flujos repetitivos de equipo.</p></div>
+    <div class="card"><div class="card-icon icon-cyan">🔍</div><h3>Web Search &amp; Deep Research</h3><p>Activá la búsqueda web para respuestas actualizadas. "Deep Research" sintetiza decenas de fuentes y genera informes estructurados. Ideal para threat intel y papers técnicos.</p></div>
+    <div class="card"><div class="card-icon icon-green">📄</div><h3>Análisis de Archivos</h3><p>Subí PDFs, imágenes, CSVs, logs, código fuente. Claude puede comparar múltiples documentos, extraer datos estructurados y generar visualizaciones con Code Execution.</p></div>
+    <div class="card"><div class="card-icon icon-amber">⚙️</div><h3>System Prompt por Proyecto</h3><p>Configurá un system prompt que define el rol, tono y restricciones de Claude para toda la sesión. Ejemplo: "Actuás como analista SOC Nivel 1 especializado en SIEM OSSIM..."</p></div>
+    <div class="card"><div class="card-icon icon-violet">🎨</div><h3>Artifacts Interactivos</h3><p>Claude puede generar componentes React, diagramas SVG, dashboards HTML y widgets interactivos que se renderizan en tiempo real. Útil para visualizar datos de seguridad.</p></div>
+    <div class="card"><div class="card-icon icon-cyan">🧠</div><h3>Memoria entre Sesiones</h3><p>Habilitá la memoria en Configuración para que Claude recuerde tus proyectos activos, herramientas favoritas y contexto de trabajo entre conversaciones distintas.</p></div>
+  </div>
+  <div style="margin-top:40px;">
+    <div class="subsection-label">Técnicas de prompting eficiente</div>
+    <div class="cmd-grid" style="margin-top:16px;">
+      <div class="cmd-row"><div class="cmd-key">Rol + Contexto</div><div class="cmd-desc"><strong>Siempre definí el rol al inicio.</strong> "Actuás como analista de ciberseguridad con certificación OSCP, especializado en análisis de logs SIEM. Revisá esto..." produce resultados notablemente mejores que preguntas genéricas.</div></div>
+      <div class="cmd-row"><div class="cmd-key">Formato explícito</div><div class="cmd-desc"><strong>Pedí el formato de salida.</strong> "Respondé en JSON con claves: vulnerability, cwe_id, severity, affected_line, fix" elimina ambigüedades y hace la respuesta inmediatamente usable en pipelines.</div></div>
+      <div class="cmd-row"><div class="cmd-key">Chain-of-thought</div><div class="cmd-desc"><strong>Agregá "Pensá paso a paso antes de responder"</strong> para análisis complejos. Claude externaliza el razonamiento y produce análisis más precisos y verificables.</div></div>
+      <div class="cmd-row"><div class="cmd-key">Ejemplos few-shot</div><div class="cmd-desc"><strong>Incluí 2-3 ejemplos concretos del input/output esperado.</strong> Esto calibra el estilo y nivel de detalle mejor que cualquier descripción en prosa.</div></div>
+      <div class="cmd-row"><div class="cmd-key">Restricciones negativas</div><div class="cmd-desc"><strong>Decile qué NO hacer.</strong> "No incluyas explicaciones genéricas, solo hallazgos concretos con número de línea" acota el espacio de respuesta de forma efectiva.</div></div>
+      <div class="cmd-row"><div class="cmd-key">Tags XML</div><div class="cmd-desc"><strong>Estructurá prompts largos con XML.</strong> <code style="font-family:JetBrains Mono,monospace;font-size:12px;color:var(--cyan)">&lt;context&gt;...&lt;/context&gt; &lt;task&gt;...&lt;/task&gt; &lt;format&gt;...&lt;/format&gt;</code> mejora la separación entre instrucciones y reduce alucinaciones.</div></div>
+    </div>
+  </div>
+  <div class="tip-box tip-violet" style="margin-top:32px;"><span class="tip-icon">💡</span><div class="tip-body"><strong>Truco pro: Instrucciones en XML</strong><p>Para prompts complejos de seguridad usá <code style="font-family:JetBrains Mono,monospace;font-size:12px;color:var(--cyan)">&lt;scope&gt;...&lt;/scope&gt; &lt;code&gt;...&lt;/code&gt; &lt;criteria&gt;OWASP Top 10&lt;/criteria&gt; &lt;output&gt;JSON&lt;/output&gt;</code>. Claude procesa cada sección de forma aislada y produce salidas más estructuradas.</p></div></div>
+</section>
+
+<!-- ════ DESKTOP ════ -->
+<section id="desktop">
+  <div class="section-label">Plataforma 02</div>
+  <h2 class="section-title">Claude Desktop para Windows</h2>
+  <p class="section-desc">La app de escritorio une las tres experiencias de Claude en un solo cliente nativo: conversación general, automatización de archivos (Cowork) y la potencia completa de Claude Code con CI/CD integrado.</p>
+
+  <div class="subsection" id="desktop-chat">
+    <div class="subsection-label">Sub-sección A</div>
+    <h3 class="subsection-title">Chat</h3>
+    <p style="color:var(--text-secondary);margin-bottom:24px;font-size:15px;">El chat en Desktop tiene las mismas capacidades que la web, pero con acceso nativo al portapapeles del sistema, hotkeys globales y notificaciones de Windows al terminar tareas largas.</p>
+    <div class="cards-grid cols-2">
+      <div class="card"><div class="card-icon icon-violet">⌨️</div><h3>Atajo global</h3><p>Configurá un hotkey (ej. <code style="font-family:monospace;color:var(--cyan)">Alt+Space</code>) para invocar Claude desde cualquier app Windows sin perder el foco. Ideal para consultas rápidas durante análisis de seguridad.</p></div>
+      <div class="card"><div class="card-icon icon-cyan">📋</div><h3>Paste inteligente</h3><p>Copiá cualquier log, stack trace o output de terminal desde otra app y pegalo en el chat. Claude reconoce el contexto automáticamente y ofrece acciones relevantes sin que lo especifiques.</p></div>
+      <div class="card"><div class="card-icon icon-green">🗂️</div><h3>Proyectos sincronizados</h3><p>Todos tus Proyectos de claude.ai están disponibles en Desktop. Continuá conversaciones desde el móvil, web y Desktop de forma transparente.</p></div>
+      <div class="card"><div class="card-icon icon-amber">🔔</div><h3>Notificaciones nativas</h3><p>Recibís notificaciones de Windows cuando Claude termina tareas largas. Lanzá un análisis de logs, minimizá la ventana y seguí trabajando: Claude te avisa al terminar.</p></div>
+    </div>
+  </div>
+
+  <div class="subsection" id="desktop-cowork">
+    <div class="subsection-label">Sub-sección B</div>
+    <h3 class="subsection-title">Cowork — Automatización de escritorio</h3>
+    <div class="tip-box tip-cyan" style="margin-bottom:24px;"><span class="tip-icon">🤖</span><div class="tip-body"><strong>¿Qué es Cowork?</strong><p>Automatizá tareas de archivos, procesamiento de documentos y pipelines sin escribir código. Para analistas de seguridad: procesá logs en lote, organizá reportes de auditoría y generá resúmenes automáticos de CVEs.</p></div></div>
+    <div class="code-block"><div class="code-header"><span class="code-lang">Cowork — Casos de uso en seguridad</span></div><div class="code-body">
+<span class="t-comment"># Consolidar logs de múltiples fuentes en un reporte</span>
+<span class="t-prompt">Cowork:</span> <span class="str">"Leé todos los .log de /var/log/ossim/, filtrá eventos con
+         severity=HIGH o CRITICAL, y generá /Reportes/alerta-diaria.csv
+         con columnas: timestamp, src_ip, event_type, count"</span>
+
+<span class="t-comment"># Organizar reportes de pentesting por cliente</span>
+<span class="t-prompt">Cowork:</span> <span class="str">"Procesá los PDFs de /Pentests/2024/, extraé nombre del cliente,
+         fecha y severidad general de cada reporte, y creá un índice
+         en /Reportes/indice-pentests.xlsx"</span>
+
+<span class="t-comment"># Renombrar evidencias con formato estándar</span>
+<span class="t-prompt">Cowork:</span> <span class="str">"Renombrá todas las capturas de /Evidencias/ con formato
+         AAAA-MM-DD_cliente_hallazgo-N usando el contenido del archivo."</span>
+    </div></div>
+  </div>
+
+  <div class="subsection" id="desktop-code">
+    <div class="subsection-label">Sub-sección C</div>
+    <h3 class="subsection-title">Claude Code — CLI + CI/CD + Docker</h3>
+    <p style="color:var(--text-secondary);margin-bottom:24px;font-size:15px;">Claude Code es el agente de codificación de Anthropic. Entiende tu repositorio completo, ejecuta comandos y trabaja de forma autónoma. Integrable en GitHub Actions y Docker.</p>
+    <div class="tabs">
+      <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab(this,'install')">Instalación</button>
+        <button class="tab-btn" onclick="switchTab(this,'basic')">Comandos básicos</button>
+        <button class="tab-btn" onclick="switchTab(this,'hooks')">Hooks</button>
+        <button class="tab-btn" onclick="switchTab(this,'mcp-tab')">MCP Servers</button>
+        <button class="tab-btn" onclick="switchTab(this,'cicd-docker')">CI/CD &amp; Docker</button>
+      </div>
+      <div id="install" class="tab-content active">
+        <div class="code-block" style="margin-top:0;"><div class="code-header"><span class="code-lang">PowerShell / Terminal</span></div><div class="code-body">
+<span class="cmt"># Requisito: Node.js 18+</span>
+<span class="fn">node</span> <span class="sym">--</span>version  <span class="cmt"># debe ser v18 o superior</span>
+
+<span class="cmt"># Instalación global via npm</span>
+<span class="fn">npm</span> install <span class="sym">-g</span> @anthropic-ai/claude-code
+
+<span class="cmt"># Verificar instalación</span>
+<span class="fn">claude</span> <span class="sym">--</span>version
+
+<span class="cmt"># Primer uso — autenticación</span>
+<span class="fn">claude</span>
+<span class="t-output">> Iniciá sesión en claude.ai cuando el browser se abra...</span>
+
+<span class="cmt"># Inicio en un proyecto existente</span>
+<span class="fn">cd</span> C:\mis-proyectos\mi-app
+<span class="fn">claude</span>
+
+<span class="cmt"># Modo no-interactivo (para scripts / CI)</span>
+<span class="fn">claude</span> <span class="sym">-p</span> <span class="str">"Describí la arquitectura de este proyecto"</span> <span class="sym">--</span>output-format json
+        </div></div>
+      </div>
+      <div id="basic" class="tab-content">
+        <div class="cmd-grid">
+          <div class="cmd-row"><div class="cmd-key">claude "tarea"</div><div class="cmd-desc"><strong>Modo agente completo.</strong> Claude analiza el repo, planea, escribe código, ejecuta tests y valida. Ej: <code style="font-family:monospace;font-size:12px;color:var(--cyan)">claude "Revisá src/ buscando SQL injection y generá fixes"</code></div></div>
+          <div class="cmd-row"><div class="cmd-key">claude -p "..."</div><div class="cmd-desc"><strong>Print mode (no-interactivo).</strong> Ejecuta una sola consulta y retorna. Soporta <code style="font-family:monospace;font-size:12px;color:var(--cyan)">--output-format json</code> para pipelines CI.</div></div>
+          <div class="cmd-row"><div class="cmd-key">claude --continue</div><div class="cmd-desc"><strong>Continuá la última sesión.</strong> Retoma el contexto anterior sin re-explicar el proyecto.</div></div>
+          <div class="cmd-row"><div class="cmd-key">claude --resume [id]</div><div class="cmd-desc"><strong>Retomá una sesión específica</strong> por su ID. Listá sesiones con <code style="font-family:monospace;font-size:12px;color:var(--cyan)">claude sessions list</code></div></div>
+          <div class="cmd-row"><div class="cmd-key">CLAUDE.md</div><div class="cmd-desc"><strong>Archivo de contexto del proyecto.</strong> Claude lo lee automáticamente al iniciarse. Documentá la arquitectura, convenciones, comandos críticos y criterios de seguridad.</div></div>
+        </div>
+      </div>
+      <div id="hooks" class="tab-content">
+        <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">Los hooks ejecutan scripts automáticamente antes o después de acciones de Claude. Se configuran en <code style="font-family:monospace;color:var(--cyan)">.claude/settings.json</code>.</p>
+        <div class="code-block" style="margin-top:0;"><div class="code-header"><span class="code-lang">.claude/settings.json — Hooks de seguridad</span></div><div class="code-body">
+<span class="sym">{</span>
+  <span class="prop">"hooks"</span><span class="sym">:</span> <span class="sym">{</span>
+    <span class="cmt">// Lint + security scan ANTES de que Claude escriba archivos</span>
+    <span class="prop">"PreToolUse"</span><span class="sym">:</span> <span class="sym">[{</span>
+      <span class="prop">"matcher"</span><span class="sym">:</span> <span class="str">"Write"</span><span class="sym">,</span>
+      <span class="prop">"hooks"</span><span class="sym">:</span> <span class="sym">[{</span>
+        <span class="prop">"type"</span><span class="sym">:</span> <span class="str">"command"</span><span class="sym">,</span>
+        <span class="prop">"command"</span><span class="sym">:</span> <span class="str">"npx eslint --fix $FILE &amp;&amp; npx semgrep --config auto $FILE"</span>
+      <span class="sym">}]</span>
+    <span class="sym">}]</span><span class="sym">,</span>
+    <span class="cmt">// SAST scan después de cada write</span>
+    <span class="prop">"PostToolUse"</span><span class="sym">:</span> <span class="sym">[{</span>
+      <span class="prop">"matcher"</span><span class="sym">:</span> <span class="str">"Write"</span><span class="sym">,</span>
+      <span class="prop">"hooks"</span><span class="sym">:</span> <span class="sym">[{</span>
+        <span class="prop">"type"</span><span class="sym">:</span> <span class="str">"command"</span><span class="sym">,</span>
+        <span class="prop">"command"</span><span class="sym">:</span> <span class="str">"npx snyk test --file=$FILE 2&gt;&gt; security.log || true"</span>
+      <span class="sym">}]</span>
+    <span class="sym">}]</span><span class="sym">,</span>
+    <span class="cmt">// Notificación y resumen al finalizar sesión</span>
+    <span class="prop">"Stop"</span><span class="sym">:</span> <span class="sym">[{</span>
+      <span class="prop">"hooks"</span><span class="sym">:</span> <span class="sym">[{</span>
+        <span class="prop">"type"</span><span class="sym">:</span> <span class="str">"command"</span><span class="sym">,</span>
+        <span class="prop">"command"</span><span class="sym">:</span> <span class="str">"powershell -c \"[System.Media.SystemSounds]::Beep.Play()\""</span>
+      <span class="sym">}]</span>
+    <span class="sym">}]</span>
+  <span class="sym">}</span>
+<span class="sym">}</span>
+        </div></div>
+        <div class="tip-box tip-red" style="margin-top:16px;"><span class="tip-icon">🔒</span><div class="tip-body"><strong>Hooks como guardia de seguridad</strong><p>Los hooks en PreToolUse pueden <strong>bloquear acciones</strong> antes de que se ejecuten. Usá esto para prevenir que Claude elimine archivos críticos o guarde código sin pasar un SAST scan primero.</p></div></div>
+      </div>
+      <div id="mcp-tab" class="tab-content">
+        <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">Los servidores MCP (Model Context Protocol) extienden Claude Code con herramientas externas: bases de datos, APIs, servicios de seguridad, y más.</p>
+        <div class="code-block" style="margin-top:0;"><div class="code-header"><span class="code-lang">Configurar MCP — claude mcp add</span></div><div class="code-body">
+<span class="cmt"># MCP de GitHub</span>
+<span class="fn">claude</span> mcp add github <span class="sym">--</span>transport sse <span class="str">"https://mcp.github.com/sse"</span>
+
+<span class="cmt"># MCP de PostgreSQL (local)</span>
+<span class="fn">claude</span> mcp add postgres <span class="sym">--</span>transport stdio <span class="sym">\</span>
+  <span class="str">"npx @modelcontextprotocol/server-postgres"</span> <span class="sym">\</span>
+  <span class="sym">--</span>env DATABASE_URL<span class="sym">=</span><span class="str">"postgresql://user:pass@localhost/db"</span>
+
+<span class="cmt"># MCP de Shodan (inteligencia de amenazas)</span>
+<span class="fn">claude</span> mcp add shodan <span class="sym">--</span>transport stdio <span class="sym">\</span>
+  <span class="str">"npx @shodan/mcp-server"</span> <span class="sym">\</span>
+  <span class="sym">--</span>env SHODAN_API_KEY<span class="sym">=</span><span class="str">"tu-api-key"</span>
+
+<span class="cmt"># Ahora Claude puede usar herramientas en conversación:</span>
+<span class="t-prompt">&gt;</span> <span class="t-cmd">"Buscá en Shodan hosts con el puerto 8080 abierto en el rango 192.168.1.0/24"</span>
+<span class="t-output">  Usando herramienta: shodan.host_search</span>
+<span class="t-success">  ✓ Encontrados 3 hosts — exportando a hosts-exposed.json</span>
+        </div></div>
+      </div>
+      <div id="cicd-docker" class="tab-content">
+        <p style="color:var(--text-secondary);font-size:14px;margin-bottom:20px;">Claude Code puede integrarse en pipelines de GitHub Actions para code review automatizado, análisis de seguridad en PRs y generación de documentación.</p>
+        <div class="code-block"><div class="code-header"><span class="code-lang">.github/workflows/claude-security-review.yml</span></div><div class="code-body">
+<span class="prop">name</span><span class="sym">:</span> <span class="str">Claude Security Review</span>
+<span class="prop">on</span><span class="sym">:</span>
+  <span class="prop">pull_request</span><span class="sym">:</span>
+    <span class="prop">types</span><span class="sym">:</span> <span class="sym">[</span><span class="str">opened</span><span class="sym">,</span> <span class="str">synchronize</span><span class="sym">]</span>
+
+<span class="prop">jobs</span><span class="sym">:</span>
+  <span class="prop">claude-review</span><span class="sym">:</span>
+    <span class="prop">runs-on</span><span class="sym">:</span> <span class="str">ubuntu-latest</span>
+    <span class="prop">steps</span><span class="sym">:</span>
+      <span class="sym">-</span> <span class="prop">uses</span><span class="sym">:</span> <span class="str">actions/checkout@v4</span>
+        <span class="prop">with</span><span class="sym">:</span>
+          <span class="prop">fetch-depth</span><span class="sym">:</span> <span class="num">0</span>
+
+      <span class="sym">-</span> <span class="prop">name</span><span class="sym">:</span> <span class="str">Install Claude Code</span>
+        <span class="prop">run</span><span class="sym">:</span> <span class="str">npm install -g @anthropic-ai/claude-code</span>
+
+      <span class="sym">-</span> <span class="prop">name</span><span class="sym">:</span> <span class="str">Get changed files</span>
+        <span class="prop">id</span><span class="sym">:</span> <span class="str">changed</span>
+        <span class="prop">run</span><span class="sym">:</span> <span class="sym">|</span>
+          <span class="txt">echo "files=$(git diff --name-only origin/main HEAD | tr '\n' ' ')" &gt;&gt; $GITHUB_OUTPUT</span>
+
+      <span class="sym">-</span> <span class="prop">name</span><span class="sym">:</span> <span class="str">Claude OWASP Review</span>
+        <span class="prop">env</span><span class="sym">:</span>
+          <span class="prop">ANTHROPIC_API_KEY</span><span class="sym">:</span> <span class="str">${{ secrets.ANTHROPIC_API_KEY }}</span>
+        <span class="prop">run</span><span class="sym">:</span> <span class="sym">|</span>
+          <span class="txt">claude -p "Revisá los archivos modificados en este PR: ${{ steps.changed.outputs.files }}</span>
+          <span class="txt">Aplicá criterios OWASP Top 10 2023 + principios SOLID.</span>
+          <span class="txt">Para cada hallazgo: archivo, línea, CWE, severidad (CRITICAL/HIGH/MEDIUM/LOW), fix.</span>
+          <span class="txt">Salida: JSON array." --output-format json &gt; review.json</span>
+
+      <span class="sym">-</span> <span class="prop">name</span><span class="sym">:</span> <span class="str">Post Review as PR Comment</span>
+        <span class="prop">uses</span><span class="sym">:</span> <span class="str">actions/github-script@v7</span>
+        <span class="prop">with</span><span class="sym">:</span>
+          <span class="prop">script</span><span class="sym">:</span> <span class="sym">|</span>
+            <span class="fn">const</span> fs <span class="sym">=</span> require(<span class="str">'fs'</span>);
+            <span class="fn">const</span> review <span class="sym">=</span> JSON.parse(fs.readFileSync(<span class="str">'review.json'</span>, <span class="str">'utf8'</span>));
+            <span class="fn">const</span> body <span class="sym">=</span> review.map(r <span class="sym">=&gt;</span>
+              <span class="str">`**${r.severity}** · ${r.file}:${r.line} · ${r.cwe}\n&gt; ${r.fix}`</span>
+            ).join(<span class="str">'\n\n'</span>);
+            github.rest.issues.createComment({ ...context.repo, issue_number: context.issue.number, body });
+        </div></div>
+        <div class="code-block" style="margin-top:24px;"><div class="code-header"><span class="code-lang">Dockerfile — Imagen con Claude Code integrado</span></div><div class="code-body">
+<span class="kw">FROM</span> <span class="str">node:20-alpine AS base</span>
+<span class="kw">RUN</span> <span class="fn">npm</span> install <span class="sym">-g</span> @anthropic-ai/claude-code
+
+<span class="kw">FROM</span> <span class="str">base AS analyzer</span>
+<span class="kw">WORKDIR</span> <span class="str">/app</span>
+<span class="kw">COPY</span> <span class="str">. .</span>
+<span class="cmt"># Análisis de seguridad en build time</span>
+<span class="kw">RUN</span> <span class="txt">ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY \</span>
+    <span class="fn">claude</span> <span class="sym">-p</span> <span class="str">"Buscá vulnerabilidades OWASP en src/ y falla el build si encontrás severity=CRITICAL"</span> \
+    <span class="sym">--</span>output-format json <span class="sym">|</span> node scripts/fail-on-critical.js
+
+<span class="cmt"># Imagen final de producción (sin Claude Code)</span>
+<span class="kw">FROM</span> <span class="str">node:20-alpine AS production</span>
+<span class="kw">WORKDIR</span> <span class="str">/app</span>
+<span class="kw">COPY</span> <span class="sym">--</span>from<span class="sym">=</span>base <span class="str">/app/dist ./dist</span>
+<span class="kw">COPY</span> <span class="str">package*.json .</span>
+<span class="kw">RUN</span> <span class="fn">npm</span> ci <span class="sym">--</span>only<span class="sym">=</span>production
+<span class="kw">USER</span> <span class="str">node</span>
+<span class="kw">CMD</span> <span class="sym">[</span><span class="str">"node"</span><span class="sym">,</span> <span class="str">"dist/server.js"</span><span class="sym">]</span>
+        </div></div>
+        <div class="tip-box tip-green" style="margin-top:16px;"><span class="tip-icon">✅</span><div class="tip-body"><strong>CLAUDE.md para CI/CD</strong><p>En repos con GitHub Actions, agregá al <code style="font-family:monospace;color:var(--cyan)">CLAUDE.md</code> una sección <code style="font-family:monospace;color:var(--cyan)">## CI Rules</code> con las reglas específicas del pipeline: qué archivos no tocar, qué tests correr siempre, y qué severidades bloquean el build.</p></div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;">
+      <h4 style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;margin-bottom:16px;">El archivo CLAUDE.md — System prompt de repositorio</h4>
+      <div class="code-block"><div class="code-header"><span class="code-lang">CLAUDE.md — Estructura recomendada</span></div><div class="code-body">
+<span class="sym"># Mi Proyecto</span>
+
+<span class="sym">## Stack</span>
+<span class="t-output">- Backend: Node.js 20 + Express + TypeScript</span>
+<span class="t-output">- DB: PostgreSQL 16 con Prisma ORM</span>
+<span class="t-output">- Tests: Vitest + Testing Library</span>
+
+<span class="sym">## Comandos críticos</span>
+<span class="t-output">- `npm run dev`    → servidor puerto 3000</span>
+<span class="t-output">- `npm run test`   → tests (SIEMPRE antes de commit)</span>
+<span class="t-output">- `npm run lint`   → ESLint + Prettier</span>
+
+<span class="sym">## Criterios de seguridad</span>
+<span class="t-output">- Todo input del usuario debe pasar validación Zod antes de usarse</span>
+<span class="t-output">- Queries a la DB: solo Prisma ORM, nunca SQL crudo</span>
+<span class="t-output">- Secretos: siempre en .env, nunca hardcodeados</span>
+<span class="t-output">- Auth: JWT con expiración 1h, refresh token en httpOnly cookie</span>
+
+<span class="sym">## Convenciones</span>
+<span class="t-output">- async/await (nunca .then())</span>
+<span class="t-output">- Errores manejados con Result&lt;T,E&gt; (ver src/types/result.ts)</span>
+<span class="t-output">- Toda función pública necesita JSDoc con @throws</span>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ VSCODE ════ -->
+<section id="vscode">
+  <div class="section-label">Plataforma 03</div>
+  <h2 class="section-title">Extensión Claude en VS Code</h2>
+  <p class="section-desc">La extensión integra Claude Code directamente en tu editor. Accedés a un agente que entiende todo tu workspace, puede editar archivos, correr comandos y navegar el código sin salir del IDE.</p>
+  <div class="tip-box tip-violet" style="margin-bottom:40px;"><span class="tip-icon">⚡</span><div class="tip-body"><strong>Instalación rápida</strong><p>Buscá <strong>"Claude Code"</strong> en el marketplace de VS Code o instalá con: <code style="font-family:monospace;font-size:12px;color:var(--cyan)">code --install-extension anthropic.claude-code</code>. Abrí el panel con <code style="font-family:monospace;font-size:12px;color:var(--cyan)">Ctrl+Shift+C</code>.</p></div></div>
+
+  <div class="subsection" id="vsc-model">
+    <div class="subsection-label">Configuración A</div>
+    <h3 class="subsection-title">Selección de modelo</h3>
+    <div class="cards-grid cols-3">
+      <div class="card" style="border-color:rgba(124,92,252,.25);">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="font-size:22px;">🚀</span><div><div style="font-size:11px;color:var(--violet);font-weight:600;letter-spacing:.08em;">MÁS POTENTE</div><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;">claude-opus-4</div></div></div>
+        <p style="font-size:13px;color:var(--text-secondary);">Para razonamiento complejo, arquitectura de sistemas, análisis de código legado, threat modeling profundo y tareas que requieren máxima precisión.</p>
+        <div style="margin-top:12px;"><span class="badge badge-violet">Razonamiento</span><span class="badge badge-violet">Seguridad</span></div>
+      </div>
+      <div class="card" style="border-color:rgba(0,212,255,.25);">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="font-size:22px;">⚡</span><div><div style="font-size:11px;color:var(--cyan);font-weight:600;letter-spacing:.08em;">EQUILIBRADO</div><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;">claude-sonnet-4</div></div></div>
+        <p style="font-size:13px;color:var(--text-secondary);">El modelo más versátil. Excelente para desarrollo diario, code review, análisis de logs, generación de tests y la mayoría de tareas de codificación.</p>
+        <div style="margin-top:12px;"><span class="badge badge-cyan">Default</span><span class="badge badge-cyan">Dev diario</span></div>
+      </div>
+      <div class="card" style="border-color:rgba(0,229,160,.25);">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="font-size:22px;">💨</span><div><div style="font-size:11px;color:var(--green);font-weight:600;letter-spacing:.08em;">MÁS RÁPIDO</div><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;">claude-haiku-4</div></div></div>
+        <p style="font-size:13px;color:var(--text-secondary);">Para autocompletado, explicaciones rápidas, renombrado de variables, snippets y consultas que no requieren razonamiento profundo.</p>
+        <div style="margin-top:12px;"><span class="badge badge-green">Velocidad</span><span class="badge badge-green">Snippets</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection" id="vsc-slash">
+    <div class="subsection-label">Configuración B</div>
+    <h3 class="subsection-title">Comandos con <code style="color:var(--violet);font-size:22px;">/</code></h3>
+    <div class="cmd-grid">
+      <div class="cmd-row"><div class="cmd-key">/init</div><div class="cmd-desc"><strong>Inicializar el proyecto.</strong> Claude analiza el repositorio y genera un <code style="font-family:monospace;font-size:12px;color:var(--cyan)">CLAUDE.md</code> con arquitectura, stack detectado y convenciones. Hacelo siempre en proyectos nuevos.</div></div>
+      <div class="cmd-row"><div class="cmd-key">/review</div><div class="cmd-desc"><strong>Code review completo.</strong> Claude revisa los cambios actuales con la profundidad de un senior dev: seguridad (OWASP), rendimiento, mantenibilidad y edge cases.</div></div>
+      <div class="cmd-row"><div class="cmd-key">/test</div><div class="cmd-desc"><strong>Generar tests.</strong> Analiza el código activo y genera tests unitarios, de integración y edge cases usando el framework detectado. Incluye casos de seguridad.</div></div>
+      <div class="cmd-row"><div class="cmd-key">/explain</div><div class="cmd-desc"><strong>Explicar código seleccionado.</strong> Descripción detallada de qué hace, por qué y cuáles son las implicaciones de rendimiento y seguridad.</div></div>
+      <div class="cmd-row"><div class="cmd-key">/fix</div><div class="cmd-desc"><strong>Fix automático.</strong> Seleccioná código roto o el error del terminal y /fix diagnostica, propone la corrección con explicación del root cause.</div></div>
+      <div class="cmd-row"><div class="cmd-key">/compact</div><div class="cmd-desc"><strong>Comprimir el contexto.</strong> Cuando el contexto se llena, crea un resumen eficiente de la sesión sin perder información clave. Usalo cada ~30 intercambios.</div></div>
+      <div class="cmd-row"><div class="cmd-key">/doctor</div><div class="cmd-desc"><strong>Diagnóstico del entorno.</strong> Verifica que Claude Code tenga todos los permisos, herramientas y configuraciones necesarias para funcionar correctamente.</div></div>
+    </div>
+  </div>
+
+  <div class="subsection" id="vsc-at">
+    <div class="subsection-label">Configuración C</div>
+    <h3 class="subsection-title">Referencias con <code style="color:var(--cyan);font-size:22px;">@</code></h3>
+    <div class="cmd-grid">
+      <div class="cmd-row"><div class="cmd-key">@archivo.ts</div><div class="cmd-desc"><strong>Incluye el contenido completo del archivo.</strong> Ej: <code style="font-family:monospace;font-size:12px;color:var(--cyan)">@src/auth.ts Revisá esta función buscando broken auth (OWASP A07)</code></div></div>
+      <div class="cmd-row"><div class="cmd-key">@carpeta/</div><div class="cmd-desc"><strong>Procesa todos los archivos del directorio.</strong> Ej: <code style="font-family:monospace;font-size:12px;color:var(--cyan)">@src/routes/ Añadí rate limiting y validación de input a todos los endpoints</code></div></div>
+      <div class="cmd-row"><div class="cmd-key">@git</div><div class="cmd-desc"><strong>Historial de git / diff actual.</strong> Ej: <code style="font-family:monospace;font-size:12px;color:var(--cyan)">@git staged Revisá estos cambios buscando secrets expuestos antes del commit</code></div></div>
+      <div class="cmd-row"><div class="cmd-key">@problemas</div><div class="cmd-desc"><strong>Errores del panel Problems.</strong> Incluye todos los errores de TypeScript, ESLint y otros linters. Ej: <code style="font-family:monospace;font-size:12px;color:var(--cyan)">@problemas Corregí todos los errores de tipo</code></div></div>
+      <div class="cmd-row"><div class="cmd-key">@terminal</div><div class="cmd-desc"><strong>Output del terminal integrado.</strong> Captura stacktraces, logs, errores. Ej: <code style="font-family:monospace;font-size:12px;color:var(--cyan)">@terminal ¿Por qué falla el build?</code></div></div>
+      <div class="cmd-row"><div class="cmd-key">@url</div><div class="cmd-desc"><strong>Contenido de una URL.</strong> Ej: <code style="font-family:monospace;font-size:12px;color:var(--cyan)">@https://owasp.org/Top10/ Implementá las mitigaciones relevantes en @src/</code></div></div>
+    </div>
+  </div>
+
+  <div class="subsection" id="vsc-agentes">
+    <div class="subsection-label">Configuración D</div>
+    <h3 class="subsection-title">Agentes, Skills y Subagentes</h3>
+    <div class="cards-grid cols-2">
+      <div class="card"><div class="card-icon icon-violet">🤖</div><h3>Modo Agente Autónomo</h3><p>Claude toma decisiones, ejecuta comandos y verifica resultados sin intervención. Ideal para tareas bien definidas:</p>
+        <div class="code-block" style="margin-top:12px;"><div class="code-body" style="padding:12px;"><span class="fn">claude</span> <span class="str">"Buscá todas las queries SQL en src/, identificá las vulnerables a SQLi y refactorizalas usando Prisma ORM. Corré los tests al final."</span></div></div>
+      </div>
+      <div class="card"><div class="card-icon icon-cyan">🔀</div><h3>Multi-agente en paralelo</h3><p>Lanzá múltiples instancias para tareas independientes:</p>
+        <div class="code-block" style="margin-top:12px;"><div class="code-body" style="padding:12px;"><span class="cmt"># Terminal 1: Security audit</span>
+<span class="fn">claude</span> <span class="str">"Auditá src/ con criterios OWASP"</span>
+
+<span class="cmt"># Terminal 2: Test coverage (paralelo)</span>
+<span class="fn">claude</span> <span class="str">"Aumentá coverage a 90%+"</span></div></div>
+      </div>
+    </div>
+    <div style="margin-top:24px;">
+      <h4 style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;margin-bottom:16px;">Custom Slash Commands</h4>
+      <div class="code-block"><div class="code-header"><span class="code-lang">.claude/commands/security-audit.md</span></div><div class="code-body">
+<span class="sym">---</span>
+<span class="prop">description</span><span class="sym">:</span> <span class="str">"Auditoría de seguridad completa del proyecto"</span>
+<span class="sym">---</span>
+
+<span class="t-output">Realizá una auditoría de seguridad completa:</span>
+
+<span class="t-output">1. Buscá vulnerabilidades OWASP Top 10 2023 en src/</span>
+<span class="t-output">2. Verificá que no haya secrets hardcodeados (API keys, passwords, tokens)</span>
+<span class="t-output">3. Revisá dependencias con `npm audit` y reportá las críticas</span>
+<span class="t-output">4. Verificá headers de seguridad HTTP en los endpoints</span>
+<span class="t-output">5. Generá /reports/security-audit-FECHA.md con:</span>
+<span class="t-output">   - Resumen ejecutivo</span>
+<span class="t-output">   - Hallazgos por severidad (CRITICAL / HIGH / MEDIUM / LOW)</span>
+<span class="t-output">   - Fix propuesto para cada hallazgo</span>
+<span class="t-output">   - Checklist de remediación</span>
+<span class="cmt">// Activar con: /security-audit</span>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ INTEGRACIONES ════ -->
+<section id="integraciones">
+  <div class="section-label">Extensiones</div>
+  <h2 class="section-title">MCP Servers</h2>
+  <p class="section-desc">Claude Code se conecta con tus herramientas a través de MCP Servers. Aquí las integraciones más importantes, incluyendo herramientas de ciberseguridad.</p>
+  <div class="cards-grid cols-3" style="margin-bottom:40px;">
+    <div class="integration-card"><div class="int-logo">🐙</div><div class="int-name">GitHub</div><div class="int-desc">Crear PRs, revisar issues, analizar diffs y gestionar branches desde la conversación</div></div>
+    <div class="integration-card"><div class="int-logo">💳</div><div class="int-name">Stripe</div><div class="int-desc">Consultar pagos, crear productos, gestionar suscripciones y debuggear webhooks</div></div>
+    <div class="integration-card"><div class="int-logo">🐘</div><div class="int-name">PostgreSQL</div><div class="int-desc">Ejecutar queries, inspeccionar schemas, generar migraciones y optimizar consultas</div></div>
+    <div class="integration-card"><div class="int-logo">🔍</div><div class="int-name">Shodan</div><div class="int-desc">Búsqueda de hosts expuestos, análisis de superficie de ataque y threat intelligence en tiempo real</div></div>
+    <div class="integration-card"><div class="int-logo">🦠</div><div class="int-name">VirusTotal</div><div class="int-desc">Análisis de IPs, dominios, hashes y URLs maliciosas directamente desde Claude Code</div></div>
+    <div class="integration-card"><div class="int-logo">🛡️</div><div class="int-name">MISP / TheHive</div><div class="int-desc">Gestión de IOCs, correlación de eventos de seguridad y creación de alertas en plataformas SOAR</div></div>
+    <div class="integration-card"><div class="int-logo">☁️</div><div class="int-name">AWS / GCP</div><div class="int-desc">Gestionar recursos cloud, revisar policies IAM, detectar misconfigurations y costos</div></div>
+    <div class="integration-card"><div class="int-logo">💬</div><div class="int-name">Slack</div><div class="int-desc">Enviar alertas de seguridad, reportes de deploy y notificaciones de incidentes a canales</div></div>
+    <div class="integration-card"><div class="int-logo">🔍</div><div class="int-name">Sentry</div><div class="int-desc">Consultar errores en producción, analizar stacktraces y correlacionar con cambios de código</div></div>
+  </div>
+  <div class="code-block"><div class="code-header"><span class="code-lang">.claude/settings.json — MCPs incluyendo ciberseguridad</span></div><div class="code-body">
+<span class="sym">{</span>
+  <span class="prop">"mcpServers"</span><span class="sym">:</span> <span class="sym">{</span>
+
+    <span class="prop">"github"</span><span class="sym">:</span> <span class="sym">{</span>
+      <span class="prop">"command"</span><span class="sym">:</span> <span class="str">"npx"</span><span class="sym">,</span>
+      <span class="prop">"args"</span><span class="sym">:</span> <span class="sym">[</span><span class="str">"-y"</span><span class="sym">,</span> <span class="str">"@modelcontextprotocol/server-github"</span><span class="sym">],</span>
+      <span class="prop">"env"</span><span class="sym">:</span> <span class="sym">{</span> <span class="prop">"GITHUB_PERSONAL_ACCESS_TOKEN"</span><span class="sym">:</span> <span class="str">"ghp_..."</span> <span class="sym">}</span>
+    <span class="sym">},</span>
+
+    <span class="prop">"postgres"</span><span class="sym">:</span> <span class="sym">{</span>
+      <span class="prop">"command"</span><span class="sym">:</span> <span class="str">"npx"</span><span class="sym">,</span>
+      <span class="prop">"args"</span><span class="sym">:</span> <span class="sym">[</span><span class="str">"-y"</span><span class="sym">,</span> <span class="str">"@modelcontextprotocol/server-postgres"</span><span class="sym">,</span>
+               <span class="str">"postgresql://user:pass@localhost:5432/miapp"</span><span class="sym">]</span>
+    <span class="sym">},</span>
+
+    <span class="cmt">// Shodan — threat intelligence y búsqueda de hosts expuestos</span>
+    <span class="prop">"shodan"</span><span class="sym">:</span> <span class="sym">{</span>
+      <span class="prop">"command"</span><span class="sym">:</span> <span class="str">"npx"</span><span class="sym">,</span>
+      <span class="prop">"args"</span><span class="sym">:</span> <span class="sym">[</span><span class="str">"-y"</span><span class="sym">,</span> <span class="str">"@shodan/mcp-server"</span><span class="sym">],</span>
+      <span class="prop">"env"</span><span class="sym">:</span> <span class="sym">{</span> <span class="prop">"SHODAN_API_KEY"</span><span class="sym">:</span> <span class="str">"tu-shodan-api-key"</span> <span class="sym">}</span>
+    <span class="sym">},</span>
+
+    <span class="cmt">// VirusTotal — análisis de hashes, IPs y URLs</span>
+    <span class="prop">"virustotal"</span><span class="sym">:</span> <span class="sym">{</span>
+      <span class="prop">"command"</span><span class="sym">:</span> <span class="str">"npx"</span><span class="sym">,</span>
+      <span class="prop">"args"</span><span class="sym">:</span> <span class="sym">[</span><span class="str">"-y"</span><span class="sym">,</span> <span class="str">"mcp-virustotal"</span><span class="sym">],</span>
+      <span class="prop">"env"</span><span class="sym">:</span> <span class="sym">{</span> <span class="prop">"VT_API_KEY"</span><span class="sym">:</span> <span class="str">"tu-vt-api-key"</span> <span class="sym">}</span>
+    <span class="sym">},</span>
+
+    <span class="prop">"slack"</span><span class="sym">:</span> <span class="sym">{</span>
+      <span class="prop">"command"</span><span class="sym">:</span> <span class="str">"npx"</span><span class="sym">,</span>
+      <span class="prop">"args"</span><span class="sym">:</span> <span class="sym">[</span><span class="str">"-y"</span><span class="sym">,</span> <span class="str">"@modelcontextprotocol/server-slack"</span><span class="sym">],</span>
+      <span class="prop">"env"</span><span class="sym">:</span> <span class="sym">{</span> <span class="prop">"SLACK_BOT_TOKEN"</span><span class="sym">:</span> <span class="str">"xoxb-..."</span> <span class="sym">}</span>
+    <span class="sym">}</span>
+
+  <span class="sym">}</span>
+<span class="sym">}</span>
+  </div></div>
+</section>
+
+
+<!-- ════ EJEMPLOS ════ -->
+<section id="ejemplos">
+  <div class="section-label">En la práctica</div>
+  <h2 class="section-title">Ejemplos de objetivos reales</h2>
+  <p class="section-desc">Flujos completos que combinan Claude Web, Desktop y VS Code con integraciones reales para alcanzar objetivos concretos de desarrollo.</p>
+
+  <div class="scenario" id="ej1">
+    <div class="scenario-header"><div class="scenario-num">01</div><div>
+      <div class="scenario-title">Implementar sistema de pagos con Stripe desde cero</div>
+      <div class="scenario-subtitle"><span class="badge badge-violet">VS Code</span><span class="badge badge-cyan">Claude Code</span><span class="badge badge-green">MCP Stripe</span><span class="badge badge-amber">GitHub</span></div>
+    </div></div>
+    <div class="scenario-body"><div class="scenario-steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content">
+        <div class="step-title">Explorar la documentación de Stripe con Claude Web</div>
+        <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">Web:</span> <span class="str">"Actuás como arquitecto de pagos. Necesito implementar pagos únicos
+       y suscripciones con Stripe en Node.js + TypeScript. Buscá la doc
+       más reciente y dame el flujo con endpoints exactos, webhooks necesarios
+       y errores que debo manejar. Formato: tabla markdown."</span>
+        </div></div>
+      </div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content">
+        <div class="step-title">Scaffold con Claude Code en VS Code</div>
+        <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">VS Code:</span> <span class="str">"Implementá el sistema de pagos con Stripe. Necesito:
+- POST /api/checkout — crear Payment Intent
+- POST /api/subscribe — crear Subscription
+- POST /api/webhooks/stripe — recibir eventos (payment_succeeded, subscription.updated)
+- Validar firma del webhook con STRIPE_WEBHOOK_SECRET
+- Tests para cada endpoint con mocks de Stripe
+Stack actual: @src/app.ts @CLAUDE.md"</span>
+<span class="t-success">✓ src/routes/checkout.ts · src/routes/webhooks.ts</span>
+<span class="t-success">✓ src/services/stripe.service.ts · src/tests/payments.test.ts (18 tests)</span>
+        </div></div>
+      </div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content">
+        <div class="step-title">Crear PR con MCP de GitHub</div>
+        <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">VS Code:</span> <span class="str">"/deploy y después creá un PR con título 'feat: Stripe payment system'
+              describiendo endpoints, coverage y breaking changes"</span>
+<span class="t-success">✓ Tests: 18/18  ✓ Build: exitoso  ✓ PR creado: github.com/org/repo/pull/42</span>
+        </div></div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <div class="scenario" id="ej2">
+    <div class="scenario-header"><div class="scenario-num">02</div><div>
+      <div class="scenario-title">Configurar pipeline CI/CD completo con GitHub Actions</div>
+      <div class="scenario-subtitle"><span class="badge badge-violet">Claude Web</span><span class="badge badge-cyan">VS Code</span><span class="badge badge-green">MCP GitHub</span></div>
+    </div></div>
+    <div class="scenario-body"><div class="scenario-steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content">
+        <div class="step-title">Diseñar el pipeline en Claude Web</div>
+        <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">Web:</span> <span class="str">"Sos un experto en DevOps. Diseñá un pipeline de CI/CD para:
+- Stack: Node.js + TypeScript + PostgreSQL
+- Deploy target: AWS ECS con Fargate
+- Branches: main (producción) + develop (staging)
+Necesito: lint → test → SAST (Snyk) → build → docker → deploy
+Con caché de dependencias, notificaciones a Slack y rollback automático."</span>
+        </div></div>
+      </div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content">
+        <div class="step-title">Generar archivos de configuración</div>
+        <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">VS Code:</span> <span class="str">"Generá el workflow de GitHub Actions con el step de Claude security
+              review integrado. @CLAUDE.md · Incluí Dockerfile multi-stage
+              optimizado y el script de rollback."</span>
+<span class="t-success">✓ .github/workflows/ci.yml  ✓ .github/workflows/deploy.yml</span>
+<span class="t-success">✓ Dockerfile (multi-stage, 180MB → 45MB)  ✓ scripts/rollback.sh</span>
+        </div></div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <div class="scenario" id="ej3">
+    <div class="scenario-header"><div class="scenario-num">03</div><div>
+      <div class="scenario-title">Migrar y optimizar base de datos con MCP SQL</div>
+      <div class="scenario-subtitle"><span class="badge badge-violet">VS Code</span><span class="badge badge-cyan">MCP Postgres</span><span class="badge badge-green">Claude Code</span></div>
+    </div></div>
+    <div class="scenario-body"><div class="scenario-steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content">
+        <div class="step-title">Analizar el schema con MCP Postgres</div>
+        <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">VS Code:</span> <span class="str">"Conectate a la DB y analizá el schema completo. Identificá:
+- Tablas sin índices en columnas frecuentemente consultadas
+- FK sin índice, queries lentas (pg_stat_statements)
+- Columnas nullable que deberían ser NOT NULL"</span>
+<span class="t-output">  ⚠ orders.user_id — FK sin índice (tabla de 2M rows)</span>
+<span class="t-output">  ⚠ products.category — 450ms avg query, necesita índice</span>
+        </div></div>
+      </div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content">
+        <div class="step-title">Generar y verificar migración</div>
+        <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">VS Code:</span> <span class="str">"Generá migración Prisma que agregue índices CONCURRENTES (sin lock).
+              Ejecutá EXPLAIN ANALYZE antes/después y reportá la mejora."</span>
+<span class="t-success">✓ orders JOIN query: 850ms → 12ms (98.6% mejora)</span>
+<span class="t-success">✓ products filter:  450ms → 8ms  (98.2% mejora)</span>
+        </div></div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <div class="scenario" id="ej4">
+    <div class="scenario-header"><div class="scenario-num">04</div><div>
+      <div class="scenario-title">Refactor masivo de codebase legada a TypeScript</div>
+      <div class="scenario-subtitle"><span class="badge badge-violet">Claude Code CLI</span><span class="badge badge-cyan">Multi-agente</span><span class="badge badge-green">Hooks</span></div>
+    </div></div>
+    <div class="scenario-body"><div class="scenario-steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content">
+        <div class="step-title">Auditoría con Claude en modo análisis</div>
+        <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="fn">claude</span> <span class="sym">-p</span> <span class="str">"Analizá todos los .js de src/ y generá reporte JSON con:
+complejidad ciclomática, dependencias entre módulos, funciones sin JSDoc,
+patrones problemáticos (callbacks anidados, globals)"</span> <span class="sym">--</span>output-format json <span class="sym">&gt;</span> audit.json
+        </div></div>
+      </div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content">
+        <div class="step-title">Migración en paralelo con hook TypeScript automático</div>
+        <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="cmt"># 3 terminales simultáneos</span>
+<span class="fn">claude</span> <span class="str">"Migrá src/routes/ de JS a TypeScript con tipos de express"</span>
+<span class="fn">claude</span> <span class="str">"Migrá src/services/ de JS a TypeScript con interfaces para DTOs"</span>
+<span class="fn">claude</span> <span class="str">"Migrá src/utils/ de JS a TypeScript con genéricos"</span>
+
+<span class="cmt">// Hook PostToolUse: valida tsc en cada write automáticamente</span>
+<span class="str">"command"</span><span class="sym">:</span> <span class="str">"npx tsc --noEmit $FILE &amp;&amp; echo OK || echo FAIL"</span>
+        </div></div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <div class="scenario" id="ej5">
+    <div class="scenario-header"><div class="scenario-num">05</div><div>
+      <div class="scenario-title">Construir agente de soporte técnico con Claude API</div>
+      <div class="scenario-subtitle"><span class="badge badge-violet">Claude Web</span><span class="badge badge-cyan">API Anthropic</span><span class="badge badge-green">VS Code</span><span class="badge badge-amber">Slack MCP</span></div>
+    </div></div>
+    <div class="scenario-body"><div class="scenario-steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content">
+        <div class="step-title">Diseñar el sistema prompt del agente</div>
+        <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">Web:</span> <span class="str">"Diseñá un agente de soporte técnico que:
+1. Consulte nuestra DB de tickets (Postgres vía MCP)
+2. Busque en la doc interna (archivos Markdown)
+3. Escale a humanos en Slack si confidence &lt; 0.7
+4. Responda en &lt; 2s para casos simples
+Diseñá el system prompt, esquema de tools y lógica de escalación con few-shot examples."</span>
+        </div></div>
+      </div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content">
+        <div class="step-title">Implementar y testear</div>
+        <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">VS Code:</span> <span class="str">"Implementá el agente con Anthropic SDK v0.30+.
+@CLAUDE.md sección 'Agente Soporte'. Testear con 20 tickets reales."</span>
+<span class="t-success">✓ Resolución sin escalación: 78%  ✓ Tiempo: 1.3s  ✓ Accuracy: 91%</span>
+        </div></div>
+      </div></div>
+    </div></div>
+  </div>
+</section>
+
+
+<!-- ════════════ CIBERSEGURIDAD ════════════ -->
+<section id="ciberseguridad">
+  <div class="section-label section-label-red">Especializado 01</div>
+  <h2 class="section-title">Ciberseguridad con Claude</h2>
+  <p class="section-desc">Claude es un aliado poderoso para analistas de seguridad: code review ofensivo/defensivo, análisis de herramientas, threat modeling, OSINT y detección de anomalías en logs. Todo en contexto educativo y autorizado.</p>
+
+  <div class="tip-box tip-red"><span class="tip-icon">⚠️</span><div class="tip-body"><strong>Contexto de uso responsable</strong><p>Claude asiste en análisis de seguridad defensiva, CTFs autorizados, pentesting con scope definido y educación técnica. Para cada prompt de seguridad, <strong>especificá siempre el contexto</strong>: entorno controlado, plataforma educativa o engagement autorizado. Esto mejora la calidad de las respuestas y mantiene el uso dentro del marco ético.</p></div></div>
+
+  <div class="cards-grid cols-3" style="margin-top:32px;">
+    <div class="card"><div class="card-icon icon-red">🔎</div><h3>Code Review de Seguridad</h3><p>Análisis exhaustivo de código buscando vulnerabilidades OWASP Top 10, con CWE ID, severidad CVSS v3 y fix concreto para cada hallazgo.</p></div>
+    <div class="card"><div class="card-icon icon-amber">🏴‍☠️</div><h3>CTF &amp; Análisis de Exploits</h3><p>Ayuda para entender vulnerabilidades en desafíos CTF, identificar tipos de exploits y comprender flujos de explotación con fines educativos.</p></div>
+    <div class="card"><div class="card-icon icon-violet">🗺️</div><h3>Threat Modeling</h3><p>Generación de análisis STRIDE, identificación de actores y superficies de ataque, y redacción de informes de pentesting profesionales.</p></div>
+    <div class="card"><div class="card-icon icon-cyan">🔧</div><h3>Interpretación de Herramientas</h3><p>Claude analiza outputs de Burp Suite, Nmap, Metasploit y otras herramientas para identificar vectores de ataque y próximos pasos.</p></div>
+    <div class="card"><div class="card-icon icon-green">📊</div><h3>Análisis de Logs &amp; OSINT</h3><p>Detección de patrones de ataque en logs, correlación de IOCs, y soporte para investigaciones OSINT con fuentes públicas.</p></div>
+    <div class="card"><div class="card-icon icon-red">🛡️</div><h3>Hardening &amp; Remediación</h3><p>Guías de hardening específicas por tecnología, listas de verificación de seguridad y priorización de remediaciones por riesgo.</p></div>
+  </div>
+
+  <!-- Sub: Code review de seguridad -->
+  <div class="subsection" id="sec-code-review">
+    <div class="subsection-label subsection-label-red">Sub-sección A</div>
+    <h3 class="subsection-title">Code Review de Seguridad (SAST con IA)</h3>
+    <p style="color:var(--text-secondary);margin-bottom:24px;font-size:15px;">Claude puede actuar como un analizador SAST sofisticado cuando se le provee el código completo con contexto del stack. La clave es especificar los criterios exactos de análisis.</p>
+
+    <div class="prompt-block">
+      <div class="pb-body">
+<span class="pb-highlight">Actuás como un experto en AppSec con certificación OSCP y profundo conocimiento de OWASP Top 10 2023.</span>
+
+<span class="pb-comment">Analizá el siguiente código buscando ESPECÍFICAMENTE:</span>
+□ <span class="pb-highlight">A01 Broken Access Control</span> — verificá que cada endpoint valide permisos
+□ <span class="pb-highlight">A02 Cryptographic Failures</span> — datos sensibles en tránsito y en reposo
+□ <span class="pb-highlight">A03 Injection</span> — SQL, NoSQL, LDAP, OS command, XSS
+□ <span class="pb-highlight">A07 Identification &amp; Authentication Failures</span> — manejo de sesiones, JWT
+□ <span class="pb-highlight">A09 Security Logging Failures</span> — qué se loguea y qué no
+
+Para cada hallazgo reportá:
+- <span class="pb-var">Línea exacta</span> afectada en el código
+- <span class="pb-var">CWE ID</span> y nombre completo
+- <span class="pb-var">Severidad CVSS v3</span>: CRITICAL / HIGH / MEDIUM / LOW
+- <span class="pb-var">Explicación del riesgo</span> en términos de impacto al negocio
+- <span class="pb-var">Fix concreto</span> con código corregido
+
+<span class="pb-comment">Formato de salida: primero tabla resumen ordenada por severidad,
+luego sección detallada por hallazgo con el fix.</span>
+
+<span class="pb-highlight">&lt;code&gt;</span>
+<span class="pb-var">[PEGÁ AQUÍ EL CÓDIGO A ANALIZAR]</span>
+<span class="pb-highlight">&lt;/code&gt;</span>
+      </div>
+    </div>
+
+    <h4 style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;margin:24px 0 12px;">Ejemplo de output esperado</h4>
+    <div class="vuln-row"><span class="vuln-sev sev-critical">CRITICAL</span><div class="vuln-text"><strong>CWE-89 SQL Injection</strong> — línea 47: <code style="font-family:monospace;color:var(--red);font-size:12px">db.query("SELECT * FROM users WHERE id=" + userId)</code><br>Fix: <code style="font-family:monospace;color:var(--green);font-size:12px">db.query("SELECT * FROM users WHERE id = $1", [userId])</code></div></div>
+    <div class="vuln-row"><span class="vuln-sev sev-high">HIGH</span><div class="vuln-text"><strong>CWE-798 Hardcoded Credentials</strong> — línea 12: <code style="font-family:monospace;color:var(--red);font-size:12px">const JWT_SECRET = "mi-secreto-123"</code><br>Fix: mover a variable de entorno con validación en startup</div></div>
+    <div class="vuln-row"><span class="vuln-sev sev-medium">MEDIUM</span><div class="vuln-text"><strong>CWE-522 Insufficiently Protected Credentials</strong> — contraseñas hasheadas con MD5 en lugar de bcrypt/argon2</div></div>
+    <div class="vuln-row"><span class="vuln-sev sev-low">LOW</span><div class="vuln-text"><strong>CWE-209 Information Exposure</strong> — stack traces expuestos en respuestas de error en modo producción</div></div>
+
+    <div class="tip-box tip-violet" style="margin-top:20px;"><span class="tip-icon">💡</span><div class="tip-body"><strong>Truco: Claude Code + Semgrep en paralelo</strong><p>Para proyectos grandes, combiná: <code style="font-family:monospace;font-size:12px;color:var(--cyan)">npx semgrep --config auto src/ --json | claude -p "Analizá estos hallazgos de Semgrep, priorizalos por riesgo real y descartá falsos positivos"</code>. Claude filtra y contextualiza mejor que cualquier herramienta sola.</p></div></div>
+  </div>
+
+  <!-- Sub: CTF -->
+  <div class="subsection" id="sec-ctf">
+    <div class="subsection-label subsection-label-red">Sub-sección B</div>
+    <h3 class="subsection-title">CTF &amp; Análisis de Exploits Educativos</h3>
+    <p style="color:var(--text-secondary);margin-bottom:24px;font-size:15px;">Claude es un excelente compañero para CTFs: ayuda a identificar el tipo de vulnerabilidad, explicar el concepto detrás del exploit y sugerir herramientas. Siempre especificá que es un entorno educativo.</p>
+
+    <div class="prompt-block">
+      <div class="pb-body">
+<span class="pb-highlight">Estoy participando en un CTF educativo</span> en la plataforma <span class="pb-var">[HackTheBox / TryHackMe / PicoCTF]</span>.
+
+El desafío es: <span class="pb-var">[descripción del reto]</span>
+Tengo acceso a: <span class="pb-var">[código fuente / binario / servicio web / puerto abierto]</span>
+
+<span class="pb-comment">Ayudame a:</span>
+1. <span class="pb-highlight">Identificar</span> el tipo de vulnerabilidad (explicación conceptual)
+2. <span class="pb-highlight">Entender</span> el flujo de explotación paso a paso
+3. <span class="pb-highlight">Seleccionar herramientas</span> apropiadas (gdb, pwndbg, pwntools, Ghidra, etc.)
+4. <span class="pb-highlight">Razonar</span> sobre el payload sin dármelo completo — quiero aprender
+
+<span class="pb-comment">Contexto: entorno controlado y autorizado, solo con fines educativos.</span>
+      </div>
+    </div>
+
+    <div class="cards-grid cols-2" style="margin-top:24px;">
+      <div class="card"><h3>🔢 Tipos de vuln que Claude explica bien</h3>
+        <ul class="feature-list" style="margin-top:12px;">
+          <li><span class="check">✓</span><span><strong>Buffer overflow</strong> — stack vs heap, ret2libc, ROP chains</span></li>
+          <li><span class="check">✓</span><span><strong>Format string</strong> — lectura/escritura arbitraria de memoria</span></li>
+          <li><span class="check">✓</span><span><strong>Web: SQLi, XSS, SSRF, XXE</strong> — bypass de filtros, payloads avanzados</span></li>
+          <li><span class="check">✓</span><span><strong>Crypto: padding oracle, ECB mode</strong> — ataques clásicos de criptografía</span></li>
+          <li><span class="check">✓</span><span><strong>Reversing</strong> — análisis de algoritmos en assembler/bytecode</span></li>
+        </ul>
+      </div>
+      <div class="card"><h3>🛠️ Prompt para análisis de binario</h3>
+        <div class="code-block" style="margin-top:12px;"><div class="code-body" style="padding:12px;font-size:12px;">
+<span class="t-prompt">Web:</span> <span class="str">"Tengo este output de checksec y el
+decompilado de Ghidra de un binario CTF.
+Identificá el tipo de vulnerabilidad,
+explicá el concepto de explotación
+y qué secciones del código son
+el punto de entrada del ataque.
+
+&lt;checksec&gt;[OUTPUT]&lt;/checksec&gt;
+&lt;decompiled&gt;[CÓDIGO]&lt;/decompiled&gt;"</span>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sub: Threat Modeling -->
+  <div class="subsection" id="sec-threatmodel">
+    <div class="subsection-label subsection-label-red">Sub-sección C</div>
+    <h3 class="subsection-title">Threat Modeling y Redacción de Informes</h3>
+    <p style="color:var(--text-secondary);margin-bottom:24px;font-size:15px;">Claude puede generar threat models completos usando la metodología STRIDE y redactar informes de pentesting profesionales a partir de tus hallazgos.</p>
+
+    <div class="tabs">
+      <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab(this,'stride')">STRIDE</button>
+        <button class="tab-btn" onclick="switchTab(this,'pentest-report')">Informe Pentest</button>
+      </div>
+      <div id="stride" class="tab-content active">
+        <div class="prompt-block"><div class="pb-body">
+<span class="pb-highlight">Realizá un threat model STRIDE</span> para el siguiente sistema:
+
+<span class="pb-var">[Descripción del sistema: componentes, flujos de datos, usuarios, tecnologías]</span>
+
+<span class="pb-comment">Estructura del análisis:</span>
+— <span class="pb-highlight">Actores</span>: internos, externos, adversarios potenciales
+— <span class="pb-highlight">Activos críticos</span>: datos, servicios, infraestructura
+— <span class="pb-highlight">Por cada categoría STRIDE</span>:
+  S — Spoofing: amenazas de identidad + mitigaciones
+  T — Tampering: integridad de datos + controles
+  R — Repudiation: trazabilidad + logging
+  I — Information Disclosure: confidencialidad + cifrado
+  D — Denial of Service: disponibilidad + resiliencia
+  E — Elevation of Privilege: control de acceso + least privilege
+— <span class="pb-highlight">Matriz de riesgo</span>: probabilidad × impacto (1-5)
+— <span class="pb-highlight">Top 5 remediaciones</span> priorizadas por ROI de seguridad
+        </div></div>
+      </div>
+      <div id="pentest-report" class="tab-content">
+        <div class="prompt-block"><div class="pb-body">
+<span class="pb-highlight">Redactá un informe ejecutivo de pentesting</span> basado en los siguientes hallazgos:
+
+<span class="pb-var">[Lista de vulnerabilidades encontradas con detalles técnicos]</span>
+
+<span class="pb-comment">El informe debe tener:</span>
+— <span class="pb-highlight">Resumen ejecutivo</span> (para no técnicos, máx. 1 página)
+— <span class="pb-highlight">Alcance y metodología</span> (herramientas usadas, período, scope)
+— <span class="pb-highlight">Hallazgos por severidad</span> (CRITICAL → LOW), para cada uno:
+    · Descripción técnica del riesgo
+    · Evidencia (capturas/outputs) — marcadores: [VER EVIDENCIA X]
+    · Impacto en el negocio en términos no técnicos
+    · Pasos de remediación con referencias (CVE, CWE, OWASP)
+    · Tiempo estimado de remediación
+— <span class="pb-highlight">Tabla de riesgo residual</span> post-remediación
+— <span class="pb-highlight">Roadmap de remediación</span> a 30/60/90 días
+
+<span class="pb-comment">Tono: profesional, concreto, sin jerga innecesaria.</span>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sub: Herramientas -->
+  <div class="subsection" id="sec-tools">
+    <div class="subsection-label subsection-label-red">Sub-sección D</div>
+    <h3 class="subsection-title">Interpretar Outputs: Burp Suite · Nmap · Metasploit</h3>
+    <p style="color:var(--text-secondary);margin-bottom:24px;font-size:15px;">El patrón más potente: ejecutás la herramienta, copiás el output en Claude y pedís análisis, priorización y próximos pasos. Claude conoce profundamente el output de cada herramienta.</p>
+
+    <div class="cards-grid cols-1" style="gap:16px;">
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><div class="card-icon icon-amber" style="margin-bottom:0;width:36px;height:36px;font-size:16px;">🕷️</div><h3 style="margin-bottom:0;">Burp Suite</h3></div>
+        <div class="prompt-block"><div class="pb-body" style="font-size:12px;">
+<span class="pb-highlight">Contexto: pentesting autorizado en [URL/sistema].</span>
+Intercepté esta request/response HTTP en Burp Suite:
+
+<span class="pb-var">&lt;request&gt;[PEGÁ LA REQUEST COMPLETA]&lt;/request&gt;
+&lt;response&gt;[PEGÁ LA RESPONSE]&lt;/response&gt;</span>
+
+Analizá: ¿Hay parámetros vulnerables a <span class="pb-highlight">SQLi, XSS, IDOR, CSRF</span>?
+¿Los headers de seguridad están correctos? (CSP, HSTS, X-Frame-Options)
+¿La cookie tiene los flags httpOnly y Secure?
+<span class="pb-comment">Dame payloads de prueba para cada vector identificado.</span>
+        </div></div>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><div class="card-icon icon-cyan" style="margin-bottom:0;width:36px;height:36px;font-size:16px;">📡</div><h3 style="margin-bottom:0;">Nmap</h3></div>
+        <div class="prompt-block"><div class="pb-body" style="font-size:12px;">
+<span class="pb-highlight">Escaneo autorizado en [target/scope].</span>
+Output de Nmap:
+
+<span class="pb-var">&lt;nmap_output&gt;[PEGÁ EL OUTPUT COMPLETO DE NMAP]&lt;/nmap_output&gt;</span>
+
+Analizá:
+1. ¿Qué servicios tienen versiones con <span class="pb-highlight">CVEs conocidos</span>? (mencioná los CVE ID)
+2. ¿Qué puertos/servicios representan mayor <span class="pb-highlight">superficie de ataque</span>?
+3. ¿Qué información sobre el OS/stack podés inferir del fingerprint?
+4. <span class="pb-highlight">Próximos pasos</span> recomendados (scripts NSE, enumeración adicional)
+<span class="pb-comment">Formato: tabla por puerto con servicio/versión/CVEs/riesgo/siguiente paso.</span>
+        </div></div>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><div class="card-icon icon-red" style="margin-bottom:0;width:36px;height:36px;font-size:16px;">💉</div><h3 style="margin-bottom:0;">Metasploit</h3></div>
+        <div class="prompt-block"><div class="pb-body" style="font-size:12px;">
+<span class="pb-highlight">Pentesting autorizado. Scope: [definido en contrato].</span>
+Output del módulo Metasploit:
+
+<span class="pb-var">&lt;msf_output&gt;[PEGÁ EL OUTPUT DE MSF]&lt;/msf_output&gt;</span>
+
+Explicá:
+1. ¿Qué vulnerabilidad explota este módulo? (CVE + descripción técnica)
+2. ¿Qué indica el output sobre el <span class="pb-highlight">nivel de acceso</span> obtenido?
+3. ¿Cuáles son los <span class="pb-highlight">pasos post-explotación</span> más relevantes para documentar?
+4. ¿Qué <span class="pb-highlight">artefactos y logs</span> deja la explotación que debo documentar para el informe?
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sub: OSINT + Logs -->
+  <div class="subsection" id="sec-osint">
+    <div class="subsection-label subsection-label-red">Sub-sección E</div>
+    <h3 class="subsection-title">OSINT, Análisis de Logs y Detección de Anomalías</h3>
+    <p style="color:var(--text-secondary);margin-bottom:24px;font-size:15px;">Claude es especialmente útil para correlacionar eventos en logs y detectar patrones de ataque que serían difíciles de identificar manualmente. Clave para trabajo en SIEM como OSSIM.</p>
+
+    <div class="cards-grid cols-2">
+      <div class="card">
+        <h3>📋 Análisis de Logs de Servidor Web</h3>
+        <div class="prompt-block" style="margin-top:16px;"><div class="pb-body" style="font-size:12px;">
+<span class="pb-highlight">Actuás como analista SOC Nivel 1.</span>
+Analizá estos logs de Apache/Nginx:
+
+<span class="pb-var">&lt;logs&gt;[PEGÁ LOS LOGS AQUÍ]&lt;/logs&gt;</span>
+
+Identificá:
+— Patrones de ataque: <span class="pb-highlight">SQLi, XSS, LFI/RFI, path traversal, brute force, scanners</span>
+— IPs con comportamiento sospechoso (volumen, user-agents, timing)
+— Códigos de respuesta que sugieran éxito de ataques (200 en paths sospechosos)
+— <span class="pb-highlight">IOCs</span> para bloquear en firewall/WAF
+
+<span class="pb-comment">Formato: tabla de IPs sospechosas + timeline cronológico + lista de IOCs.</span>
+        </div></div>
+      </div>
+      <div class="card">
+        <h3>🔍 OSINT — Reconocimiento con fuentes públicas</h3>
+        <div class="prompt-block" style="margin-top:16px;"><div class="pb-body" style="font-size:12px;">
+<span class="pb-highlight">Investigación OSINT autorizada para [empresa/scope].</span>
+
+A partir de esta información inicial: <span class="pb-var">[dominio / empresa / IP]</span>
+
+Sugerí qué información buscar en estas <span class="pb-highlight">fuentes públicas</span>:
+— DNS: subdominios, registros MX/TXT, transferencias de zona
+— Certificate Transparency: crt.sh para certificados expuestos
+— Shodan/Censys: servicios y puertos expuestos
+— GitHub: posibles secretos o código interno filtrado
+— Wayback Machine: versiones anteriores del sitio
+
+<span class="pb-comment">Objetivo: mapear la superficie de ataque usando SOLO fuentes pasivas.</span>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="tool-output" style="margin-top:24px;">
+      <div class="tool-output-header">OSSIM / AlienVault — Prompt para análisis de alertas</div>
+      <div class="tool-output-body">
+<span class="t-prompt">Claude:</span> <span class="str">"Tengo estas alertas de OSSIM de las últimas 4 horas:
+[PEGÁ LAS ALERTAS EN FORMATO CSV O TEXTO]
+
+Actuás como analista SOC. Identificá:
+1. ¿Hay correlación temporal entre las alertas? ¿Sugiere un ataque coordinado?
+2. ¿Cuáles son las fuentes IP únicas y en qué países están?
+3. ¿Hay patrones de escalada de privilegios o movimiento lateral?
+4. Clasificá las alertas: ruido de fondo vs. amenaza real (P1/P2/P3)
+5. ¿Qué reglas de correlación OSSIM recomendás activar?"</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ PROGRAMACIÓN AVANZADA ════════════ -->
+<section id="programacion">
+  <div class="section-label section-label-cyan">Especializado 02</div>
+  <h2 class="section-title">Programación Avanzada</h2>
+  <p class="section-desc">Flujos completos de desarrollo con Claude: desde el diseño de arquitectura hasta la documentación, pasando por tests, refactoring y code review con criterios específicos de calidad y seguridad.</p>
+
+  <!-- Sub: Flujo completo -->
+  <div class="subsection" id="prog-flujo">
+    <div class="subsection-label">Sub-sección A</div>
+    <h3 class="subsection-title">Flujo completo: Arquitectura → Código → Tests → Refactor → Docs</h3>
+    <div class="scenario" style="margin-top:24px;">
+      <div class="scenario-header"><div class="scenario-num">FLUJO</div><div>
+        <div class="scenario-title">Implementar una feature completa de forma profesional</div>
+        <div class="scenario-subtitle"><span class="badge badge-cyan">Claude Web</span><span class="badge badge-violet">VS Code</span><span class="badge badge-green">Claude Code</span></div>
+      </div></div>
+      <div class="scenario-body"><div class="scenario-steps">
+        <div class="step"><div class="step-num">1</div><div class="step-content">
+          <div class="step-title">Diseño de arquitectura (Claude Web)</div>
+          <div class="step-desc">Antes de escribir código, usá Claude Web para diseñar.</div>
+          <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">Web:</span> <span class="str">"Actuás como arquitecto de software senior. Necesito diseñar
+el módulo de autenticación para [descripción del sistema].
+Considerá: scalability, testability, separation of concerns, seguridad.
+Devolvé:
+1. Diagrama de componentes en ASCII
+2. Decisiones arquitectónicas con pros/cons de alternativas
+3. Interfaces/contratos entre componentes
+4. Riesgos identificados y cómo mitigarlos"</span>
+          </div></div>
+        </div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content">
+          <div class="step-title">Implementación guiada (VS Code)</div>
+          <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">VS Code:</span> <span class="str">"Implementá el módulo de autenticación según la arquitectura
+definida. @CLAUDE.md · @src/types/auth.ts (interfaces ya definidas)
+Seguí: async/await, Result&lt;T,E&gt; para errores, JSDoc en funciones públicas.
+NO implementes la UI todavía."</span>
+<span class="t-success">✓ src/services/auth.service.ts  ✓ src/repositories/user.repo.ts</span>
+          </div></div>
+        </div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content">
+          <div class="step-title">Tests exhaustivos</div>
+          <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">VS Code:</span> <span class="str">"/test @src/services/auth.service.ts
+Necesito coverage mínimo 90%. Incluí:
+- Happy path (login exitoso, registro, logout)
+- Error cases (credenciales inválidas, usuario no existe, token expirado)
+- Edge cases (SQL injection en inputs, encoding especial, concurrencia)
+- Mocks para la DB y servicios externos"</span>
+<span class="t-success">✓ 34 tests generados · Coverage: 94.2%</span>
+          </div></div>
+        </div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-content">
+          <div class="step-title">Refactoring con SOLID</div>
+          <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">VS Code:</span> <span class="str">"Revisá @src/services/auth.service.ts aplicando principios SOLID.
+Identificá code smells y refactorizá sin cambiar el comportamiento externo.
+Verificá que @src/tests/auth.test.ts siga pasando después del refactor."</span>
+          </div></div>
+        </div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-content">
+          <div class="step-title">Documentación automática</div>
+          <div class="code-block"><div class="code-body" style="padding:14px;">
+<span class="t-prompt">VS Code:</span> <span class="str">"Generá documentación técnica para @src/services/auth.service.ts:
+1. JSDoc completo con @param, @returns, @throws para cada función
+2. Sección en README.md: 'Authentication Module' con ejemplos de uso
+3. Entrada en CHANGELOG.md: feat: authentication module v1.0
+4. Actualizá CLAUDE.md con la arquitectura del nuevo módulo"</span>
+          </div></div>
+        </div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- Sub: Monorepos -->
+  <div class="subsection" id="prog-claudemd">
+    <div class="subsection-label">Sub-sección B</div>
+    <h3 class="subsection-title">CLAUDE.md para Monorepos y Proyectos Grandes</h3>
+    <p style="color:var(--text-secondary);margin-bottom:24px;font-size:15px;">En monorepos, la clave es tener un CLAUDE.md raíz con contexto global y CLAUDE.md por paquete con contexto específico. Claude los lee en cascada.</p>
+    <div class="code-block"><div class="code-header"><span class="code-lang">Monorepo — Estructura recomendada</span></div><div class="code-body">
+<span class="t-output">mi-monorepo/</span>
+<span class="t-output">├── CLAUDE.md              ← Contexto global del monorepo</span>
+<span class="t-output">├── packages/</span>
+<span class="t-output">│   ├── api/</span>
+<span class="t-output">│   │   └── CLAUDE.md      ← Contexto específico del API</span>
+<span class="t-output">│   ├── web/</span>
+<span class="t-output">│   │   └── CLAUDE.md      ← Contexto específico del frontend</span>
+<span class="t-output">│   └── shared/</span>
+<span class="t-output">│       └── CLAUDE.md      ← Tipos y utils compartidos</span>
+<span class="t-output">└── .claude/</span>
+<span class="t-output">    ├── settings.json      ← MCPs y hooks globales</span>
+<span class="t-output">    └── commands/          ← Slash commands personalizados</span>
+    </div></div>
+    <div class="code-block" style="margin-top:16px;"><div class="code-header"><span class="code-lang">CLAUDE.md raíz — Monorepo</span></div><div class="code-body">
+<span class="sym"># Monorepo — Mi Plataforma SaaS</span>
+
+<span class="sym">## Arquitectura global</span>
+<span class="t-output">- Monorepo con Turborepo + pnpm workspaces</span>
+<span class="t-output">- packages/api   → Express + TypeScript (puerto 4000)</span>
+<span class="t-output">- packages/web   → Next.js 14 App Router (puerto 3000)</span>
+<span class="t-output">- packages/shared → Tipos compartidos, validaciones Zod</span>
+
+<span class="sym">## Reglas ABSOLUTAS (aplican a TODO el monorepo)</span>
+<span class="t-output">- NUNCA importar desde packages/ usando rutas relativas entre paquetes</span>
+<span class="t-output">  Usar: @mi-plataforma/shared (workspace alias)</span>
+<span class="t-output">- NUNCA hardcodear URLs de API — usar process.env.API_URL</span>
+<span class="t-output">- Secretos SOLO en .env.local (nunca en .env commiteado)</span>
+
+<span class="sym">## Comandos globales</span>
+<span class="t-output">- `pnpm dev`        → Levanta todos los servicios en paralelo</span>
+<span class="t-output">- `pnpm test`       → Tests de todos los paquetes</span>
+<span class="t-output">- `pnpm type-check` → TypeScript en todos los paquetes</span>
+
+<span class="sym">## Para tareas que afectan múltiples paquetes</span>
+<span class="t-output">Siempre verificar: ¿el cambio en shared rompe la API o el web?
+Ejecutar: `pnpm type-check` antes de commitear cualquier cambio en shared/</span>
+    </div></div>
+  </div>
+
+  <!-- Sub: Debugging -->
+  <div class="subsection" id="prog-debug">
+    <div class="subsection-label">Sub-sección C</div>
+    <h3 class="subsection-title">Debugging Complejo — Cómo Compartir Errores de Forma Efectiva</h3>
+    <p style="color:var(--text-secondary);margin-bottom:24px;font-size:15px;">La diferencia entre "Claude resuelve el bug en 1 turno" y "3 turnos dando vueltas" está en <strong>cómo presentás el error</strong>. Usá esta plantilla.</p>
+    <div class="prompt-block"><div class="pb-body">
+<span class="pb-highlight">## Contexto del error</span>
+— <span class="pb-var">Qué estaba haciendo</span>: [acción concreta que desencadenó el error]
+— <span class="pb-var">Comportamiento esperado</span>: [qué debería pasar]
+— <span class="pb-var">Comportamiento actual</span>: [qué pasa en realidad]
+— <span class="pb-var">¿Es reproducible?</span>: siempre / intermitente / solo en prod
+
+<span class="pb-highlight">## Stack trace completo</span>
+<span class="pb-var">&lt;error&gt;
+[PEGÁ AQUÍ EL STACK TRACE COMPLETO — no recortes]
+&lt;/error&gt;</span>
+
+<span class="pb-highlight">## Entorno</span>
+— Node.js: <span class="pb-var">v20.10.0</span> · TypeScript: <span class="pb-var">5.3.2</span>
+— OS: <span class="pb-var">Windows 11 / Ubuntu 22.04</span>
+— Paquete que falló: <span class="pb-var">nombre@versión</span>
+
+<span class="pb-highlight">## Código relevante</span>
+<span class="pb-var">@src/services/payment.service.ts  ← donde ocurre el error
+@src/routes/checkout.ts           ← quien llama a la función</span>
+
+<span class="pb-highlight">## Lo que ya intenté</span>
+<span class="pb-comment">— Intenté X → resultado Y
+— Revisé Z → no encontré nada relevante
+— La función funcionaba hasta el commit [hash corto]</span>
+    </div></div>
+    <div class="tip-box tip-cyan" style="margin-top:20px;"><span class="tip-icon">⚡</span><div class="tip-body"><strong>En VS Code: usá @terminal + @archivo</strong><p>En el panel de Claude: <code style="font-family:monospace;font-size:12px;color:var(--cyan)">@terminal @src/services/payment.service.ts El test de la línea 47 falla intermitentemente. Analizá el stack trace y el código.</code> Claude ve el output real del terminal sin que copies nada.</p></div></div>
+  </div>
+
+  <!-- Sub: Code review OWASP/SOLID -->
+  <div class="subsection" id="prog-review">
+    <div class="subsection-label">Sub-sección D</div>
+    <h3 class="subsection-title">Code Review con Criterios Específicos: OWASP + SOLID + Clean Code</h3>
+    <div class="cmd-grid">
+      <div class="cmd-row"><div class="cmd-key cmd-key-red">OWASP</div><div class="cmd-desc"><strong>Seguridad:</strong> <code style="font-family:monospace;font-size:12px;color:var(--cyan)">"/review @src/ — Criterios: OWASP Top 10 2023. Para cada hallazgo: línea, CWE, severidad CVSS, fix."</code></div></div>
+      <div class="cmd-row"><div class="cmd-key cmd-key-violet">SOLID</div><div class="cmd-desc"><strong>Diseño OOP:</strong> <code style="font-family:monospace;font-size:12px;color:var(--cyan)">"/review @src/services/ — Verificá los 5 principios SOLID. Señalá violaciones con propuesta de refactor."</code></div></div>
+      <div class="cmd-row"><div class="cmd-key cmd-key-amber">Clean Code</div><div class="cmd-desc"><strong>Legibilidad:</strong> <code style="font-family:monospace;font-size:12px;color:var(--cyan)">"/review @src/ — Criterios Clean Code: nombres significativos, funciones pequeñas, no comentarios obvios, DRY."</code></div></div>
+      <div class="cmd-row"><div class="cmd-key">Performance</div><div class="cmd-desc"><strong>Rendimiento:</strong> <code style="font-family:monospace;font-size:12px;color:var(--cyan)">"/review @src/db/ — Buscá N+1 queries, índices faltantes, queries no paginadas y memory leaks potenciales."</code></div></div>
+      <div class="cmd-row"><div class="cmd-key">Completo</div><div class="cmd-desc"><strong>Review senior-level:</strong> <code style="font-family:monospace;font-size:12px;color:var(--cyan)">"/review @git staged — Aplicá todos los criterios: OWASP + SOLID + Clean Code + Performance + Testabilidad."</code></div></div>
+    </div>
+  </div>
+
+  <!-- Sub: CI/CD GitHub Actions -->
+  <div class="subsection" id="prog-cicd">
+    <div class="subsection-label">Sub-sección E</div>
+    <h3 class="subsection-title">Integración CI/CD — Claude en GitHub Actions</h3>
+    <div class="cards-grid cols-2">
+      <div class="card"><div class="card-icon icon-green">🔄</div><h3>Casos de uso en CI/CD</h3>
+        <ul class="feature-list" style="margin-top:12px;">
+          <li><span class="check">✓</span><span><strong>Code review automático en PRs</strong> — comentarios con hallazgos</span></li>
+          <li><span class="check">✓</span><span><strong>Security scan</strong> — OWASP en cada push a main</span></li>
+          <li><span class="check">✓</span><span><strong>Generación de release notes</strong> — a partir de commits</span></li>
+          <li><span class="check">✓</span><span><strong>Documentación automática</strong> — actualizar README en merges</span></li>
+          <li><span class="check">✓</span><span><strong>Análisis de coverage</strong> — comentar tests faltantes</span></li>
+        </ul>
+      </div>
+      <div class="card"><div class="card-icon icon-violet">⚙️</div><h3>Configuración de secretos</h3>
+        <div class="code-block" style="margin-top:12px;"><div class="code-body" style="padding:12px;font-size:12px;">
+<span class="cmt"># En GitHub repo Settings → Secrets:</span>
+ANTHROPIC_API_KEY <span class="sym">=</span> <span class="str">sk-ant-...</span>
+
+<span class="cmt"># En el workflow, claudelo con:</span>
+<span class="prop">env</span><span class="sym">:</span>
+  ANTHROPIC_API_KEY<span class="sym">:</span> <span class="str">${{ secrets.ANTHROPIC_API_KEY }}</span>
+
+<span class="cmt"># Modo no-interactivo obligatorio en CI:</span>
+<span class="fn">claude</span> <span class="sym">-p</span> <span class="str">"tarea"</span> <span class="sym">--</span>output-format json
+        </div></div>
+      </div>
+    </div>
+    <div class="code-block" style="margin-top:24px;"><div class="code-header"><span class="code-lang">.github/workflows/claude-pr-review.yml — Completo</span></div><div class="code-body">
+<span class="prop">name</span><span class="sym">:</span> <span class="str">Claude PR Review</span>
+<span class="prop">on</span><span class="sym">:</span>
+  <span class="prop">pull_request</span><span class="sym">:</span> <span class="sym">{</span> <span class="prop">types</span><span class="sym">:</span> <span class="sym">[</span><span class="str">opened</span><span class="sym">,</span> <span class="str">synchronize</span><span class="sym">]</span> <span class="sym">}</span>
+
+<span class="prop">permissions</span><span class="sym">:</span>
+  <span class="prop">pull-requests</span><span class="sym">:</span> <span class="str">write</span>
+  <span class="prop">contents</span><span class="sym">:</span> <span class="str">read</span>
+
+<span class="prop">jobs</span><span class="sym">:</span>
+  <span class="prop">review</span><span class="sym">:</span>
+    <span class="prop">runs-on</span><span class="sym">:</span> <span class="str">ubuntu-latest</span>
+    <span class="prop">steps</span><span class="sym">:</span>
+      <span class="sym">-</span> <span class="prop">uses</span><span class="sym">:</span> <span class="str">actions/checkout@v4</span>
+        <span class="prop">with</span><span class="sym">:</span> <span class="sym">{</span> <span class="prop">fetch-depth</span><span class="sym">:</span> <span class="num">0</span> <span class="sym">}</span>
+
+      <span class="sym">-</span> <span class="prop">uses</span><span class="sym">:</span> <span class="str">actions/setup-node@v4</span>
+        <span class="prop">with</span><span class="sym">:</span> <span class="sym">{</span> <span class="prop">node-version</span><span class="sym">:</span> <span class="str">'20'</span> <span class="sym">}</span>
+
+      <span class="sym">-</span> <span class="prop">run</span><span class="sym">:</span> <span class="str">npm install -g @anthropic-ai/claude-code</span>
+
+      <span class="sym">-</span> <span class="prop">name</span><span class="sym">:</span> <span class="str">Get diff</span>
+        <span class="prop">id</span><span class="sym">:</span> <span class="str">diff</span>
+        <span class="prop">run</span><span class="sym">:</span> <span class="sym">|</span>
+          <span class="txt">git diff origin/${{ github.base_ref }}...HEAD &gt; changes.diff</span>
+          <span class="txt">echo "files=$(git diff --name-only origin/${{ github.base_ref }}...HEAD | tr '\n' ' ')" &gt;&gt; $GITHUB_OUTPUT</span>
+
+      <span class="sym">-</span> <span class="prop">name</span><span class="sym">:</span> <span class="str">Claude Review</span>
+        <span class="prop">env</span><span class="sym">:</span>
+          <span class="prop">ANTHROPIC_API_KEY</span><span class="sym">:</span> <span class="str">${{ secrets.ANTHROPIC_API_KEY }}</span>
+        <span class="prop">run</span><span class="sym">:</span> <span class="sym">|</span>
+          <span class="txt">cat changes.diff | claude -p \</span>
+          <span class="str">"Revisá este diff de PR como senior dev. Criterios: OWASP Top 10,</span>
+          <span class="str">SOLID, tests faltantes, performance. Máximo 5 hallazgos priorizados.</span>
+          <span class="str">Formato JSON: [{file, line, severity, issue, suggestion}]"</span> \
+          <span class="txt">--output-format json &gt; review.json</span>
+
+      <span class="sym">-</span> <span class="prop">name</span><span class="sym">:</span> <span class="str">Comment on PR</span>
+        <span class="prop">uses</span><span class="sym">:</span> <span class="str">actions/github-script@v7</span>
+        <span class="prop">with</span><span class="sym">:</span>
+          <span class="prop">script</span><span class="sym">:</span> <span class="sym">|</span>
+            <span class="fn">const</span> findings <span class="sym">=</span> JSON.parse(require(<span class="str">'fs'</span>).readFileSync(<span class="str">'review.json'</span>));
+            <span class="fn">const</span> icons <span class="sym">=</span> <span class="sym">{</span> CRITICAL<span class="sym">:</span><span class="str">'🔴'</span><span class="sym">,</span> HIGH<span class="sym">:</span><span class="str">'🟠'</span><span class="sym">,</span> MEDIUM<span class="sym">:</span><span class="str">'🟡'</span><span class="sym">,</span> LOW<span class="sym">:</span><span class="str">'🟢'</span> <span class="sym">}</span>;
+            <span class="fn">const</span> body <span class="sym">=</span> <span class="str">'## 🤖 Claude Code Review\n\n'</span> <span class="sym">+</span>
+              findings.map(f <span class="sym">=&gt;</span> <span class="str">`${icons[f.severity]} **${f.severity}** · \`${f.file}:${f.line}\`\n${f.issue}\n> ${f.suggestion}`</span>).join(<span class="str">'\n\n'</span>);
+            github.rest.issues.createComment(<span class="sym">{</span> ...context.repo<span class="sym">,</span> issue_number<span class="sym">:</span> context.issue.number<span class="sym">,</span> body <span class="sym">}</span>);
+    </div></div>
+  </div>
+</section>
+
+
+<!-- ════════════ INVESTIGACIÓN ════════════ -->
+<section id="investigacion">
+  <div class="section-label section-label-green">Especializado 03</div>
+  <h2 class="section-title">Investigación y Análisis</h2>
+  <p class="section-desc">Claude puede sintetizar documentación técnica extensa, comparar frameworks y protocolos, y extraer insights accionables de papers y RFCs en minutos en lugar de horas.</p>
+
+  <div class="subsection" id="inv-papers">
+    <div class="subsection-label subsection-label-green">Sub-sección A</div>
+    <h3 class="subsection-title">Análisis de Papers, RFCs y Documentación Técnica</h3>
+    <p style="color:var(--text-secondary);margin-bottom:24px;font-size:15px;">El truco es proporcionar el documento completo y especificar exactamente <em>qué extraer</em> y para <em>qué audiencia</em>. Un buen prompt de análisis de paper produce un resultado directamente usable.</p>
+    <div class="prompt-block"><div class="pb-body">
+<span class="pb-highlight">Actuás como experto técnico en [dominio del paper/RFC].</span>
+Analizá el siguiente documento:
+
+<span class="pb-var">&lt;document&gt;[PEGÁ EL TEXTO DEL PAPER / RFC / DOC TÉCNICA]&lt;/document&gt;</span>
+
+<span class="pb-comment">O bien: usá Web Search para buscarlo directamente:</span>
+<span class="pb-highlight">"Buscá y analizá el RFC 9110 (HTTP Semantics)..."</span>
+
+Extraé:
+1. <span class="pb-highlight">Resumen ejecutivo</span> — 3 párrafos, nivel: [experto técnico / manager / non-technical]
+2. <span class="pb-highlight">Hipótesis/Propuesta principal</span> con los argumentos clave
+3. <span class="pb-highlight">Metodología o especificación</span> — los detalles técnicos más relevantes
+4. <span class="pb-highlight">Resultados o cambios propuestos</span> con datos numéricos si los hay
+5. <span class="pb-highlight">Limitaciones y casos edge</span> que el documento reconoce
+6. <span class="pb-highlight">Aplicabilidad a mi contexto</span>: <span class="pb-var">[describí tu proyecto/sistema]</span>
+7. <span class="pb-highlight">Preguntas abiertas</span> que el documento no responde
+    </div></div>
+    <div class="cards-grid cols-2" style="margin-top:24px;">
+      <div class="card"><h3>📖 Para RFCs de protocolos</h3><div class="code-block" style="margin-top:12px;"><div class="code-body" style="padding:12px;font-size:12px;"><span class="t-prompt">Web:</span> <span class="str">"Buscá el RFC 8446 (TLS 1.3).
+Explicame los cambios respecto
+a TLS 1.2, las implicaciones
+de compatibilidad, y qué debo
+cambiar en mi servidor Nginx
+para cumplirlo."</span></div></div></div>
+      <div class="card"><h3>🔬 Para papers de seguridad</h3><div class="code-block" style="margin-top:12px;"><div class="code-body" style="padding:12px;font-size:12px;"><span class="t-prompt">Web:</span> <span class="str">"Subí el PDF del paper.
+Resumí la técnica de ataque
+propuesta, el CVE asociado si
+existe, y cómo implementar
+las mitigaciones recomendadas
+en un stack Node.js + Postgres."</span></div></div></div>
+    </div>
+  </div>
+
+  <div class="subsection" id="inv-sintesis">
+    <div class="subsection-label subsection-label-green">Sub-sección B</div>
+    <h3 class="subsection-title">Síntesis de Información de Múltiples Fuentes</h3>
+    <p style="color:var(--text-secondary);margin-bottom:24px;font-size:15px;">Claude puede recibir varios documentos a la vez (como adjuntos en claude.ai) y generar una síntesis coherente que identifica acuerdos, contradicciones y gaps.</p>
+    <div class="prompt-block"><div class="pb-body">
+<span class="pb-highlight">Tengo [N] documentos sobre [tema].</span>
+Los adjunto a esta conversación.
+
+Realizá una síntesis que incluya:
+
+1. <span class="pb-highlight">Puntos de acuerdo</span> — qué afirman TODAS las fuentes
+2. <span class="pb-highlight">Contradicciones</span> — dónde las fuentes difieren y por qué (contexto, fecha, metodología)
+3. <span class="pb-highlight">Gaps</span> — qué preguntas importantes ningún documento responde
+4. <span class="pb-highlight">Ranking de fuentes</span> por calidad/relevancia para mi caso de uso: <span class="pb-var">[describí el contexto]</span>
+5. <span class="pb-highlight">Conclusión accionable</span> — qué debería hacer/decidir a partir de esta información
+
+<span class="pb-comment">Fuentes: [listá brevemente las fuentes para que Claude las referencie en la síntesis]</span>
+    </div></div>
+    <div class="tip-box tip-green"><span class="tip-icon">💡</span><div class="tip-body"><strong>Para investigación de threat intelligence</strong><p>Cargá múltiples informes de amenazas (Mandiant, CrowdStrike, CISA) en un Proyecto de Claude y pedile: <code style="font-family:monospace;font-size:12px;color:var(--cyan)">"Sintetizá los TTPs del grupo APT mencionado en estos informes y mapeálos al framework MITRE ATT&CK"</code>. Claude cruza las fuentes automáticamente.</p></div></div>
+  </div>
+
+  <div class="subsection" id="inv-comparativas">
+    <div class="subsection-label subsection-label-green">Sub-sección C</div>
+    <h3 class="subsection-title">Comparativas Técnicas: Frameworks, Herramientas y Protocolos</h3>
+    <div class="prompt-block"><div class="pb-body">
+<span class="pb-highlight">Generá una comparativa técnica entre</span> <span class="pb-var">[A]</span>, <span class="pb-var">[B]</span> y <span class="pb-var">[C]</span>
+para el caso de uso: <span class="pb-var">[descripción específica de tu contexto y escala]</span>
+
+<span class="pb-comment">Criterios de evaluación (ajustá según tu caso):</span>
+| Criterio              | Peso | A | B | C |
+|---|---|---|---|---|
+| Rendimiento           | 25%  | ? | ? | ? |
+| Seguridad             | 20%  | ? | ? | ? |
+| Escalabilidad         | 20%  | ? | ? | ? |
+| Curva de aprendizaje  | 15%  | ? | ? | ? |
+| Ecosistema / comunidad| 10%  | ? | ? | ? |
+| Costo total (TCO)     | 10%  | ? | ? | ? |
+
+<span class="pb-highlight">Para cada criterio: justificá la puntuación con datos concretos o benchmarks.</span>
+Terminá con:
+— <span class="pb-highlight">Recomendación para mi caso específico</span> con justificación
+— <span class="pb-highlight">Cuándo elegir cada opción</span> (trade-offs claros)
+— <span class="pb-highlight">Red flags</span> de cada opción que debo conocer antes de decidir
+    </div></div>
+    <div class="cards-grid cols-3" style="margin-top:24px;">
+      <div class="card"><h3>🔒 Comparativas de seguridad</h3><p>Ej: JWT vs Session Cookies vs OAuth 2.0, WAF vendors, SIEM platforms, EDR solutions</p></div>
+      <div class="card"><h3>🗄️ Comparativas de infraestructura</h3><p>Ej: PostgreSQL vs MongoDB vs DynamoDB, Redis vs Memcached, Kubernetes vs ECS</p></div>
+      <div class="card"><h3>⚡ Comparativas de stack</h3><p>Ej: Next.js vs Remix vs SvelteKit, Express vs Fastify vs Hono, Prisma vs Drizzle</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ ESCRITURA TÉCNICA ════════════ -->
+<section id="escritura">
+  <div class="section-label section-label-amber">Especializado 04</div>
+  <h2 class="section-title">Escritura Técnica</h2>
+  <p class="section-desc">Claude produce documentación técnica de alta calidad: READMEs profesionales, specs de API en OpenAPI, changelogs estructurados y post-mortems que realmente ayudan a prevenir incidentes futuros.</p>
+
+  <div class="subsection" id="esc-readme">
+    <div class="subsection-label subsection-label-amber">Sub-sección A</div>
+    <h3 class="subsection-title">README Profesionales</h3>
+    <div class="prompt-block"><div class="pb-body">
+<span class="pb-highlight">Generá un README.md profesional para este proyecto.</span>
+Contexto del proyecto: <span class="pb-var">@CLAUDE.md @package.json @src/</span>
+
+<span class="pb-comment">El README debe incluir en este orden:</span>
+1. <span class="pb-highlight">Badges</span>: CI status, coverage, versión npm, licencia
+2. <span class="pb-highlight">Descripción</span>: qué hace, para quién es, qué problema resuelve (3 líneas)
+3. <span class="pb-highlight">Demo / Screenshot</span>: marcador [CAPTURA O GIF] si aplica
+4. <span class="pb-highlight">Features</span>: lista de capacidades principales con íconos
+5. <span class="pb-highlight">Instalación</span>: paso a paso con comandos copiables
+6. <span class="pb-highlight">Uso rápido</span>: ejemplo mínimo funcional en código
+7. <span class="pb-highlight">Configuración</span>: variables de entorno con descripción y valores por defecto
+8. <span class="pb-highlight">API / Endpoints</span>: tabla con método, ruta, descripción, auth required
+9. <span class="pb-highlight">Contributing</span>: cómo contribuir, convenciones de commits, proceso de PR
+10. <span class="pb-highlight">Licencia</span>
+
+<span class="pb-comment">Tono: técnico pero accesible. Audiencia: developers que van a usar o contribuir.</span>
+    </div></div>
+  </div>
+
+  <div class="subsection" id="esc-api">
+    <div class="subsection-label subsection-label-amber">Sub-sección B</div>
+    <h3 class="subsection-title">Documentación de APIs (OpenAPI / Swagger)</h3>
+    <div class="prompt-block"><div class="pb-body">
+<span class="pb-highlight">Generá la especificación OpenAPI 3.0 completa</span> para los siguientes endpoints.
+Código fuente: <span class="pb-var">@src/routes/ @src/types/</span>
+
+<span class="pb-comment">Para cada endpoint incluí:</span>
+— <span class="pb-highlight">operationId</span> descriptivo (ej: createPaymentIntent)
+— <span class="pb-highlight">summary</span> y <span class="pb-highlight">description</span> completa con casos de uso
+— <span class="pb-highlight">tags</span> para agrupar por módulo
+— <span class="pb-highlight">requestBody schema</span> con todos los campos, tipos y validaciones (required, minLength, pattern)
+— <span class="pb-highlight">responses</span>: 200/201 con schema de éxito + TODOS los errores posibles (400, 401, 403, 404, 422, 500)
+— <span class="pb-highlight">examples</span> reales para cada request/response
+— <span class="pb-highlight">security</span>: qué auth requiere (Bearer JWT, API Key, etc.)
+
+<span class="pb-comment">Formato de salida: YAML válido que pueda importarse directamente en Swagger UI / Redoc.</span>
+    </div></div>
+    <div class="code-block" style="margin-top:20px;"><div class="code-header"><span class="code-lang">Fragmento de output esperado</span></div><div class="code-body">
+<span class="prop">openapi</span><span class="sym">:</span> <span class="str">"3.0.3"</span>
+<span class="prop">info</span><span class="sym">:</span>
+  <span class="prop">title</span><span class="sym">:</span> <span class="str">Mi API</span>
+  <span class="prop">version</span><span class="sym">:</span> <span class="str">"1.0.0"</span>
+<span class="prop">paths</span><span class="sym">:</span>
+  <span class="prop">/api/users/{id}</span><span class="sym">:</span>
+    <span class="prop">get</span><span class="sym">:</span>
+      <span class="prop">operationId</span><span class="sym">:</span> <span class="str">getUserById</span>
+      <span class="prop">summary</span><span class="sym">:</span> <span class="str">Obtener usuario por ID</span>
+      <span class="prop">security</span><span class="sym">:</span> <span class="sym">[{</span> <span class="prop">BearerAuth</span><span class="sym">:</span> <span class="sym">[]</span> <span class="sym">}]</span>
+      <span class="prop">responses</span><span class="sym">:</span>
+        <span class="str">'200'</span><span class="sym">:</span>
+          <span class="prop">content</span><span class="sym">:</span>
+            <span class="prop">application/json</span><span class="sym">:</span>
+              <span class="prop">example</span><span class="sym">:</span> <span class="sym">{</span> <span class="prop">id</span><span class="sym">:</span> <span class="str">"usr_123"</span><span class="sym">,</span> <span class="prop">email</span><span class="sym">:</span> <span class="str">"user@example.com"</span> <span class="sym">}</span>
+        <span class="str">'401'</span><span class="sym">:</span> <span class="sym">{</span> <span class="prop">$ref</span><span class="sym">:</span> <span class="str">'#/components/responses/Unauthorized'</span> <span class="sym">}</span>
+    </div></div>
+  </div>
+
+  <div class="subsection" id="esc-changelog">
+    <div class="subsection-label subsection-label-amber">Sub-sección C</div>
+    <h3 class="subsection-title">Changelogs, Post-mortems y Reportes de Incidentes</h3>
+    <div class="cards-grid cols-1" style="gap:20px;">
+      <div class="card">
+        <h3>📋 Changelog desde git log</h3>
+        <div class="prompt-block" style="margin-top:16px;"><div class="pb-body" style="font-size:12px;">
+<span class="pb-comment">En VS Code:</span>
+<span class="pb-highlight">@git "Generá el CHANGELOG.md para la versión</span> <span class="pb-var">v2.1.0</span><span class="pb-highlight"> basado en los commits desde</span> <span class="pb-var">v2.0.0</span><span class="pb-highlight">.</span>
+Clasificá en:
+— ✨ <span class="pb-highlight">Features</span>: nuevas funcionalidades
+— 🐛 <span class="pb-highlight">Bug Fixes</span>: correcciones
+— ⚡ <span class="pb-highlight">Performance</span>: mejoras de rendimiento
+— 🔒 <span class="pb-highlight">Security</span>: parches de seguridad (IMPORTANTE: listá al principio)
+— 💥 <span class="pb-highlight">Breaking Changes</span>: cambios que rompen compatibilidad
+— 🔧 <span class="pb-highlight">Internal</span>: refactoring, deuda técnica
+
+<span class="pb-comment">Seguí el formato keepachangelog.com. No incluyas commits de merge ni 'fix typo'.</span>
+        </div></div>
+      </div>
+      <div class="card">
+        <h3>🚨 Post-mortem de incidente de seguridad</h3>
+        <div class="prompt-block" style="margin-top:16px;"><div class="pb-body" style="font-size:12px;">
+<span class="pb-highlight">Redactá un post-mortem blameless</span> del siguiente incidente:
+
+<span class="pb-var">&lt;incident&gt;
+[Describí el incidente: qué pasó, cuándo, qué sistemas afectó, cuánto duró]
+[Incluí los logs y alertas relevantes]
+&lt;/incident&gt;</span>
+
+<span class="pb-comment">Estructura del post-mortem:</span>
+— <span class="pb-highlight">Resumen ejecutivo</span>: 3 líneas (qué pasó, impacto, resolución)
+— <span class="pb-highlight">Timeline</span>: cronología exacta con timestamps (detección → respuesta → resolución)
+— <span class="pb-highlight">Root cause</span>: causa raíz técnica (NO culpar personas)
+— <span class="pb-highlight">Contributing factors</span>: factores que lo hicieron posible o lo agravaron
+— <span class="pb-highlight">Impact</span>: usuarios afectados, datos, SLA, costo estimado
+— <span class="pb-highlight">Resolution</span>: qué se hizo para mitigarlo
+— <span class="pb-highlight">Action items</span>: tabla con Owner / Fecha / Prioridad para prevenir recurrencia
+— <span class="pb-highlight">Lessons learned</span>: qué salió bien y qué mejorar en el proceso de respuesta
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ CHEATSHEET ════════════ -->
+<section id="cheatsheet">
+  <div class="section-label">Referencia rápida</div>
+  <h2 class="section-title">Cheatsheet Completo</h2>
+  <p class="section-desc">Todos los comandos, flags, atajos y prompts esenciales en un solo lugar. Guardá esta sección como referencia diaria.</p>
+
+  <!-- Claude Code CLI -->
+  <div class="subsection">
+    <h3 class="subsection-title">Claude Code — CLI Flags</h3>
+    <div style="overflow-x:auto;">
+    <table class="cheat-table">
+      <thead><tr><th>Comando</th><th>Descripción</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td><code>claude</code></td><td>Modo interactivo (REPL)</td><td><code>claude</code></td></tr>
+        <tr><td><code>claude -p "..."</code></td><td>Modo no-interactivo (pipe)</td><td><code>echo "Fix bug" | claude -p "Arreglá esto"</code></td></tr>
+        <tr><td><code>--output-format json</code></td><td>Salida estructurada JSON</td><td><code>claude -p "analiza" --output-format json</code></td></tr>
+        <tr><td><code>--continue / -c</code></td><td>Continuar última sesión</td><td><code>claude --continue</code></td></tr>
+        <tr><td><code>--resume &lt;id&gt;</code></td><td>Retomar sesión por ID</td><td><code>claude --resume abc123</code></td></tr>
+        <tr><td><code>--model</code></td><td>Seleccionar modelo</td><td><code>claude --model claude-opus-4-5</code></td></tr>
+        <tr><td><code>--max-turns N</code></td><td>Limitar turnos de agente</td><td><code>claude -p "task" --max-turns 10</code></td></tr>
+        <tr><td><code>--allowedTools</code></td><td>Whitelist de herramientas</td><td><code>--allowedTools "Bash,Read,Write"</code></td></tr>
+        <tr><td><code>--disallowedTools</code></td><td>Blacklist de herramientas</td><td><code>--disallowedTools "WebSearch"</code></td></tr>
+        <tr><td><code>--verbose</code></td><td>Output detallado</td><td><code>claude --verbose</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- Slash Commands -->
+  <div class="subsection" style="margin-top:32px;">
+    <h3 class="subsection-title">Slash Commands (Claude Code)</h3>
+    <div style="overflow-x:auto;">
+    <table class="cheat-table">
+      <thead><tr><th>Comando</th><th>Acción</th></tr></thead>
+      <tbody>
+        <tr><td><code>/clear</code></td><td>Limpiar contexto de la conversación</td></tr>
+        <tr><td><code>/compact</code></td><td>Resumir contexto para liberar tokens</td></tr>
+        <tr><td><code>/memory</code></td><td>Ver y editar CLAUDE.md del proyecto</td></tr>
+        <tr><td><code>/model</code></td><td>Cambiar modelo en la sesión</td></tr>
+        <tr><td><code>/cost</code></td><td>Ver consumo de tokens de la sesión</td></tr>
+        <tr><td><code>/doctor</code></td><td>Diagnóstico de instalación</td></tr>
+        <tr><td><code>/bug</code></td><td>Reportar bug con contexto automático</td></tr>
+        <tr><td><code>/exit</code></td><td>Salir (o Ctrl+C dos veces)</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- @ Symbols VSCode -->
+  <div class="subsection" style="margin-top:32px;">
+    <h3 class="subsection-title">@ References (VS Code / Claude Code)</h3>
+    <div style="overflow-x:auto;">
+    <table class="cheat-table">
+      <thead><tr><th>Símbolo</th><th>Qué incluye</th></tr></thead>
+      <tbody>
+        <tr><td><code>@archivo.py</code></td><td>Contenido completo del archivo</td></tr>
+        <tr><td><code>@src/</code></td><td>Todos los archivos de la carpeta (recursivo)</td></tr>
+        <tr><td><code>@git</code></td><td>Git diff, commits recientes, estado del repo</td></tr>
+        <tr><td><code>@problems</code></td><td>Errores y warnings activos del linter / TypeScript</td></tr>
+        <tr><td><code>@CLAUDE.md</code></td><td>Instrucciones del proyecto (system prompt implícito)</td></tr>
+        <tr><td><code>@url</code></td><td>Contenido de una URL (Claude Code lee la página)</td></tr>
+        <tr><td><code>#nombre</code></td><td>Buscar y referenciar símbolo (función, clase, variable)</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- Atajos de teclado -->
+  <div class="subsection" style="margin-top:32px;">
+    <h3 class="subsection-title">Atajos de Teclado</h3>
+    <div class="cards-grid cols-2" style="margin-top:16px;">
+      <div class="card"><h3>Claude Code (terminal)</h3>
+        <div class="cmd-row" style="margin-top:12px;"><div class="cmd-key">Ctrl+C</div><span>Interrumpir acción actual</span></div>
+        <div class="cmd-row"><div class="cmd-key">Ctrl+C×2</div><span>Salir de Claude Code</span></div>
+        <div class="cmd-row"><div class="cmd-key">Ctrl+L</div><span>Limpiar pantalla</span></div>
+        <div class="cmd-row"><div class="cmd-key">↑ ↓</div><span>Navegar historial de prompts</span></div>
+        <div class="cmd-row"><div class="cmd-key">Esc</div><span>Cancelar prompt actual (modo vim)</span></div>
+      </div>
+      <div class="card"><h3>VS Code Extension</h3>
+        <div class="cmd-row" style="margin-top:12px;"><div class="cmd-key">Ctrl+Shift+C</div><span>Abrir panel Claude</span></div>
+        <div class="cmd-row"><div class="cmd-key">Ctrl+I</div><span>Inline edit en selección</span></div>
+        <div class="cmd-row"><div class="cmd-key">Ctrl+Enter</div><span>Aceptar sugerencia</span></div>
+        <div class="cmd-row"><div class="cmd-key">Ctrl+K</div><span>Modo comando rápido</span></div>
+        <div class="cmd-row"><div class="cmd-key">Esc</div><span>Rechazar sugerencia</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ciberseguridad quick refs -->
+  <div class="subsection" style="margin-top:32px;">
+    <h3 class="subsection-title" style="color:var(--red);">🔒 Ciberseguridad — Prompts Rápidos</h3>
+    <div style="overflow-x:auto;">
+    <table class="cheat-table">
+      <thead><tr><th>Tarea</th><th>Prompt base</th></tr></thead>
+      <tbody>
+        <tr><td>Code review de seguridad</td><td><code>"Revisá @archivo.py con criterios OWASP Top 10 2023"</code></td></tr>
+        <tr><td>Análisis de log sospechoso</td><td><code>"Analizá este log: [LOG]. ¿Qué técnica MITRE ATT&CK detectás?"</code></td></tr>
+        <tr><td>Threat modeling STRIDE</td><td><code>"Aplicá STRIDE a: [descripción del sistema]"</code></td></tr>
+        <tr><td>Análisis de CVE</td><td><code>"Explicame CVE-XXXX-XXXX y cómo mitigarlo en [stack]"</code></td></tr>
+        <tr><td>Config de seguridad</td><td><code>"Revisá esta config de Nginx/Apache/SSH para hardening"</code></td></tr>
+        <tr><td>OSINT de dominio</td><td><code>"¿Qué info pública existe sobre el dominio [dominio]?"</code></td></tr>
+        <tr><td>Script de análisis</td><td><code>"Escribí un script Python para parsear logs de [herramienta] y detectar [patrón]"</code></td></tr>
+        <tr><td>Reporte de vulnerabilidad</td><td><code>"Redactá un reporte de vuln en formato CVE para: [descripción técnica]"</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- Programación quick refs -->
+  <div class="subsection" style="margin-top:32px;">
+    <h3 class="subsection-title" style="color:var(--violet);">⚡ Programación — Prompts Rápidos</h3>
+    <div style="overflow-x:auto;">
+    <table class="cheat-table">
+      <thead><tr><th>Tarea</th><th>Prompt base</th></tr></thead>
+      <tbody>
+        <tr><td>Arquitectura de componente</td><td><code>"Diseñá la arquitectura de [componente] con estas restricciones: [lista]"</code></td></tr>
+        <tr><td>Generar tests</td><td><code>"Escribí tests unitarios con [Jest/pytest] para @función.py con edge cases"</code></td></tr>
+        <tr><td>Refactor con patrón</td><td><code>"Refactorizá @archivo.ts aplicando el patrón [Strategy/Observer/etc]"</code></td></tr>
+        <tr><td>Debug complejo</td><td><code>"Analizá @git problems. Usá rubber duck debugging: explicame el flujo"</code></td></tr>
+        <tr><td>Code review SOLID</td><td><code>"Revisá @src/ con principios SOLID y OWASP. Listá violaciones con severidad"</code></td></tr>
+        <tr><td>Generar OpenAPI</td><td><code>"Generá spec OpenAPI 3.0 YAML para @src/routes/"</code></td></tr>
+        <tr><td>GitHub Actions CI/CD</td><td><code>"Creá workflow GH Actions para [Node/Python/Docker] con lint+test+build+deploy"</code></td></tr>
+        <tr><td>Optimizar query SQL</td><td><code>"Optimizá esta query SQL para [Postgres/MySQL]: [QUERY]"</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- MCP config snippet -->
+  <div class="subsection" style="margin-top:32px;">
+    <h3 class="subsection-title">MCP — Config Rápida</h3>
+    <div class="code-block"><div class="code-header"><span class="code-lang">~/.claude/settings.json — Estructura base</span></div><div class="code-body">
+<span class="sym">{</span>
+  <span class="prop">"mcpServers"</span><span class="sym">:</span> <span class="sym">{</span>
+    <span class="prop">"shodan"</span><span class="sym">:</span> <span class="sym">{</span>
+      <span class="prop">"command"</span><span class="sym">:</span> <span class="str">"npx"</span><span class="sym">,</span>
+      <span class="prop">"args"</span><span class="sym">:</span> <span class="sym">[</span><span class="str">"-y"</span><span class="sym">,</span> <span class="str">"@shodan/mcp-server"</span><span class="sym">],</span>
+      <span class="prop">"env"</span><span class="sym">:</span> <span class="sym">{</span> <span class="prop">"SHODAN_API_KEY"</span><span class="sym">:</span> <span class="str">"your-key"</span> <span class="sym">}</span>
+    <span class="sym">},</span>
+    <span class="prop">"virustotal"</span><span class="sym">:</span> <span class="sym">{</span>
+      <span class="prop">"command"</span><span class="sym">:</span> <span class="str">"npx"</span><span class="sym">,</span>
+      <span class="prop">"args"</span><span class="sym">:</span> <span class="sym">[</span><span class="str">"-y"</span><span class="sym">,</span> <span class="str">"@virustotal/mcp-server"</span><span class="sym">],</span>
+      <span class="prop">"env"</span><span class="sym">:</span> <span class="sym">{</span> <span class="prop">"VT_API_KEY"</span><span class="sym">:</span> <span class="str">"your-key"</span> <span class="sym">}</span>
+    <span class="sym">},</span>
+    <span class="prop">"filesystem"</span><span class="sym">:</span> <span class="sym">{</span>
+      <span class="prop">"command"</span><span class="sym">:</span> <span class="str">"npx"</span><span class="sym">,</span>
+      <span class="prop">"args"</span><span class="sym">:</span> <span class="sym">[</span><span class="str">"-y"</span><span class="sym">,</span> <span class="str">"@modelcontextprotocol/server-filesystem"</span><span class="sym">,</span> <span class="str">"/ruta/segura"</span><span class="sym">]</span>
+    <span class="sym">}</span>
+  <span class="sym">},</span>
+  <span class="prop">"hooks"</span><span class="sym">:</span> <span class="sym">{</span>
+    <span class="prop">"PreToolUse"</span><span class="sym">:</span> <span class="sym">[{</span> <span class="prop">"command"</span><span class="sym">:</span> <span class="str">"python log_tool_use.py"</span> <span class="sym">}],</span>
+    <span class="prop">"PostToolUse"</span><span class="sym">:</span> <span class="sym">[{</span> <span class="prop">"command"</span><span class="sym">:</span> <span class="str">"python save_output.py"</span> <span class="sym">}]</span>
+  <span class="sym">}</span>
+<span class="sym">}</span>
+    </div></div>
+  </div>
+</section>
+
+<!-- ════════════ AUTOR ════════════ -->
+<section id="autor" class="section-hidden" aria-label="Sobre el autor">
+  <div class="section-header">
+    <h2 class="section-title">Sobre el Autor</h2>
+    <p class="section-sub">El profesional detrás de esta guía</p>
+  </div>
+  <div class="author-card">
+    <div class="author-avatar" aria-hidden="true">👤</div>
+    <div class="author-info">
+      <h3 class="author-name">xavimape</h3>
+      <p class="author-title">Analista de Ciberseguridad · Enthusiasta de Claude AI</p>
+      <p class="author-bio">Analista de seguridad nivel 1 con foco en análisis de datos y automatización. Creo esta guía documentando flujos reales que uso a diario con Claude AI — desde code reviews OWASP hasta scripts de análisis de logs.</p>
+      <div class="author-links">
+        <a href="https://github.com/xavimape" target="_blank" rel="noopener noreferrer" class="author-link author-link-gh">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          github.com/xavimape
+        </a>
+        <a href="https://linkedin.com/in/xavimape" target="_blank" rel="noopener noreferrer" class="author-link author-link-li">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- micro-conversión -->
+  <div class="micro-cta">
+    <p class="micro-cta-label">¿Te resultó útil esta sección?</p>
+    <div class="micro-cta-actions">
+      <a href="https://github.com/xavimape/claude-guide" target="_blank" rel="noopener noreferrer" class="micro-btn micro-btn-star">⭐ Guardar repositorio</a>
+      <button class="micro-btn micro-btn-share" onclick="navigator.share ? navigator.share({title:'Claude AI Guide',url:window.location.href}) : navigator.clipboard.writeText(window.location.href).then(()=>this.textContent='🔗 ¡URL copiada!')">🔗 Compartir</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <span class="footer-logo-icon">◆</span>
+      <span class="footer-logo-name">Claude AI Guide</span>
+    </div>
+    <p class="footer-desc">Guía práctica de uso de Claude para ciberseguridad, programación avanzada, investigación técnica y escritura de documentación. Actualizada con las últimas capacidades de Claude Code y MCPs.</p>
+    <div class="footer-links">
+      <a href="https://github.com/xavimape/claude-guide" target="_blank" rel="noopener noreferrer" class="footer-link-github">⭐ GitHub</a>
+      <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">claude.ai</a>
+      <a href="https://docs.anthropic.com" target="_blank" rel="noopener noreferrer">Docs Anthropic</a>
+      <a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a>
+      <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer">MCP Spec</a>
+      <a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener noreferrer">OWASP Top 10</a>
+      <a href="https://attack.mitre.org" target="_blank" rel="noopener noreferrer">MITRE ATT&amp;CK</a>
+    </div>
+    <p class="footer-copy">Guía de referencia personal · No afiliado con Anthropic · Contenido para uso educativo y defensivo</p>
+  </div>
+</footer>
+
+    </main>
+  </div><!-- /.layout -->
+
+  <script src="js/canvas-bg.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

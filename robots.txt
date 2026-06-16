@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xavimape.github.io/claude-guide/sitemap.xml
