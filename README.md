@@ -40,17 +40,6 @@ claude-guide/
 └── README.md
 ```
 
-### Características técnicas
-- **SPA sin frameworks**: navegación entre secciones sin recarga, animaciones CSS
-- **Acordeones dinámicos**: subsecciones colapsables con `max-height` transitions
-- **Canvas animado**: red de partículas interactiva en el hero (repel con mouse)
-- **Stagger animations**: cards y bloques aparecen escalonados al entrar a cada sección
-- **Sidebar animado**: entrada escalonada + sweep hover + pulse en ítem activo
-- **Dark theme**: paleta violet/cyan/green/amber/red sobre `#08090D`
-- **GitHub Pages ready**: `index.html` en raíz, rutas relativas, sin dependencias backend
-
----
-
 ## Desarrollo local
 
 No requiere servidor. Abrí directamente `index.html` en Chrome.
